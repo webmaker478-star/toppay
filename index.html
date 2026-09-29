@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
->
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
-<meta
-    name="theme-color"
-    content="#24252c"
->
+<meta name="theme-color" content="#24252c">
+
+<link rel="icon"
+      type="image/webp"
+      href="https://i.ibb.co/fVqwvyvF/aa.webp">
+
+<link rel="apple-touch-icon"
+      href="https://i.ibb.co/fVqwvyvF/aa.webp">
 
 <title>TOP PAY</title>
 
-
 <style>
-
-/* =====================================================
-   GLOBAL
-===================================================== */
 
 *{
     box-sizing:border-box;
@@ -33,17 +29,19 @@ html,
 body{
     margin:0;
     padding:0;
-
     width:100%;
     min-height:100%;
 
     background:#f4f7fe;
-
     color:#111;
 
     font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
         Arial,
-        Helvetica,
         sans-serif;
 
     font-weight:400;
@@ -64,48 +62,62 @@ button{
 }
 
 
-/* =====================================================
+/* =========================
    PAGE
-===================================================== */
+========================= */
 
 .page{
     width:100%;
     max-width:430px;
-
     min-height:100vh;
-
     margin:0 auto;
-
-    padding:
-        0
-        16px
-        15px;
+    padding:8px 16px 15px;
 }
 
 
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 .header{
     width:100%;
-
     text-align:center;
-
-    padding-top:3px;
 }
 
-.logo{
-    font-size:23px;
 
-    line-height:27px;
+/* TOP LOGO
+   2X SIZE
+*/
+
+.logo{
+    width:210px;
+    height:84px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:0 auto 8px;
+}
+
+
+/* PAGE NAME */
+
+.logo-name{
+    margin-top:0;
 
     color:#2866c8;
+
+    font-size:23px;
+    line-height:27px;
 
     font-weight:700;
 
     letter-spacing:-.4px;
 }
+
+
+/* SUBTITLE */
 
 .subtitle{
     margin-top:1px;
@@ -113,39 +125,50 @@ button{
     color:#777;
 
     font-size:12px;
-
     line-height:15px;
 
     font-weight:400;
 }
 
 
-/* =====================================================
-   STEPPER
-===================================================== */
+/* =========================
+   STEPS
+========================= */
+
+/*
+   Narrower width = steps
+   much closer together
+*/
 
 .steps{
-    width:68%;
+    width:48%;
 
-    margin:
-        13px
-        auto
-        39px;
+    margin:13px auto 39px;
 
     display:flex;
-
     align-items:flex-start;
 }
+
+
+/* iOS STYLE STEP */
 
 .step{
     min-width:31px;
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Text",
+        "Helvetica Neue",
+        sans-serif;
 }
+
+
+/* CIRCLE */
 
 .circle{
     width:30px;
@@ -154,13 +177,16 @@ button{
     border-radius:50%;
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
     font-size:13px;
 
-    font-weight:400;
+    font-weight:500;
+
+    letter-spacing:0;
+
+    -webkit-font-smoothing:antialiased;
 }
 
 .active .circle{
@@ -173,16 +199,22 @@ button{
     color:#fff;
 }
 
+
+/* STEP NAME */
+
 .step-name{
     margin-top:4px;
 
     font-size:12.5px;
-
     line-height:14px;
 
     white-space:nowrap;
 
     font-weight:400;
+
+    letter-spacing:-.05px;
+
+    -webkit-font-smoothing:antialiased;
 }
 
 .active .step-name{
@@ -193,6 +225,9 @@ button{
     color:#a0a0a0;
 }
 
+
+/* LINE */
+
 .step-line{
     flex:1;
 
@@ -202,20 +237,16 @@ button{
 
     background:#2c68d0;
 
-    margin:
-        12px
-        3px
-        0;
+    margin:12px 3px 0;
 }
 
 
-/* =====================================================
-   POSTER VIEWPAGER
-===================================================== */
+/* =========================
+   POSTER
+========================= */
 
 .poster{
     width:100%;
-
     height:158px;
 
     position:relative;
@@ -226,12 +257,6 @@ button{
 
     background:#111;
 }
-
-
-/*
-   Track holds every poster horizontally.
-   This creates a real ViewPager-style movement.
-*/
 
 .slides-track{
     position:absolute;
@@ -245,30 +270,15 @@ button{
     display:flex;
 
     transition:
-        transform .6s
-        cubic-bezier(
-            .25,
-            .8,
-            .25,
-            1
-        );
+        transform .6s cubic-bezier(.25,.8,.25,1);
 
     will-change:transform;
 }
 
-
-/*
-   Every slide is exactly the
-   width of the poster.
-*/
-
 .slide{
     position:relative;
 
-    flex:
-        0
-        0
-        100%;
+    flex:0 0 100%;
 
     width:100%;
     height:100%;
@@ -290,22 +300,20 @@ button{
 }
 
 
-/* =====================================================
-   POSTER DOTS
-===================================================== */
+/* =========================
+   DOTS
+========================= */
 
 .dots{
     position:absolute;
 
     left:0;
     right:0;
-
     bottom:8px;
 
     display:flex;
 
     justify-content:center;
-
     align-items:center;
 
     gap:5px;
@@ -323,8 +331,7 @@ button{
 
     opacity:.9;
 
-    transition:
-        width .25s ease;
+    transition:width .25s ease;
 }
 
 .dot.active{
@@ -334,29 +341,17 @@ button{
 }
 
 
-/* =====================================================
-   MAIN CARD
-===================================================== */
+/* =========================
+   CARD
+========================= */
 
 .card{
     background:#fff;
 
-    border-radius:
-        0
-        0
-        17px
-        17px;
+    border-radius:0 0 17px 17px;
 
-    padding:
-        28px
-        21px
-        22px;
+    padding:28px 21px 22px;
 }
-
-
-/* =====================================================
-   TITLE
-===================================================== */
 
 .card-title{
     margin:0;
@@ -364,7 +359,6 @@ button{
     text-align:center;
 
     font-size:30px;
-
     line-height:35px;
 
     font-weight:700;
@@ -375,26 +369,22 @@ button{
 }
 
 .description{
-    margin:
-        13px
-        0
-        27px;
+    margin:13px 0 27px;
 
     text-align:center;
 
     color:#777;
 
     font-size:12px;
-
     line-height:15px;
 
     font-weight:400;
 }
 
 
-/* =====================================================
+/* =========================
    LABEL
-===================================================== */
+========================= */
 
 .label{
     display:block;
@@ -404,7 +394,6 @@ button{
     color:#111;
 
     font-size:12px;
-
     line-height:15px;
 
     font-weight:400;
@@ -415,24 +404,19 @@ button{
 }
 
 
-/* =====================================================
+/* =========================
    INPUT
-===================================================== */
+========================= */
 
 .input-box{
     width:100%;
-
     height:49px;
 
-    border:
-        1.2px
-        solid
-        #e4e4e4;
+    border:1.2px solid #e4e4e4;
 
     border-radius:15px;
 
     display:flex;
-
     align-items:center;
 
     background:#fff;
@@ -444,13 +428,10 @@ button{
 
 .input-icon{
     width:36px;
-
     min-width:36px;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 }
 
@@ -466,22 +447,13 @@ button{
     height:100%;
 
     border:0;
-
     outline:0;
 
     background:transparent;
 
-    padding:
-        0
-        8px
-        0
-        0;
+    padding:0 8px 0 0;
 
     color:#111;
-
-    /*
-       Increased input text size
-    */
 
     font-size:15px;
 
@@ -497,9 +469,9 @@ button{
 }
 
 
-/* =====================================================
-   FORGOT PASSWORD
-===================================================== */
+/* =========================
+   FORGOT
+========================= */
 
 .forgot{
     display:flex;
@@ -516,21 +488,20 @@ button{
 
     color:#2d66c5;
 
-    font-size:12.5px;
+    font-size:14px;
 
-    line-height:16px;
+    line-height:17px;
 
     font-weight:400;
 }
 
 
-/* =====================================================
-   CONTINUE BUTTON
-===================================================== */
+/* =========================
+   CONTINUE
+========================= */
 
 .continue{
     width:100%;
-
     height:54px;
 
     margin-top:19px;
@@ -541,9 +512,9 @@ button{
 
     color:#fff;
 
-    font-size:12px;
+    font-size:15px;
 
-    font-weight:400;
+    font-weight:500;
 
     display:flex;
 
@@ -551,7 +522,7 @@ button{
 
     justify-content:center;
 
-    gap:4px;
+    gap:5px;
 }
 
 .continue.enabled{
@@ -563,19 +534,18 @@ button{
 }
 
 .arrow{
-    font-size:15px;
+    font-size:18px;
 
     font-weight:300;
 }
 
 
-/* =====================================================
-   REGISTER BUTTON
-===================================================== */
+/* =========================
+   REGISTER
+========================= */
 
 .register{
     width:100%;
-
     height:51px;
 
     margin-top:15px;
@@ -586,26 +556,23 @@ button{
 
     color:#fff;
 
-    font-size:12px;
+    font-size:15px;
 
-    font-weight:400;
+    font-weight:500;
 }
 
 
-/* =====================================================
-   SECURITY BOX
-===================================================== */
+/* =========================
+   SECURITY
+========================= */
 
 .security{
     width:100%;
-
     min-height:62px;
 
     margin-top:16px;
 
-    padding:
-        10px
-        12px;
+    padding:10px 12px;
 
     border-radius:13px;
 
@@ -622,9 +589,7 @@ button{
 
 .security svg{
     width:16px;
-
     min-width:16px;
-
     height:16px;
 
     fill:#2869d1;
@@ -643,19 +608,17 @@ button{
 }
 
 
-/* =====================================================
+/* =========================
    TELEGRAM
-===================================================== */
+========================= */
 
 .telegram{
     position:fixed;
 
     right:13px;
-
     bottom:12px;
 
     width:41px;
-
     height:41px;
 
     border-radius:50%;
@@ -665,61 +628,45 @@ button{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     box-shadow:
-        0
-        3px
-        10px
-        rgba(0,0,0,.16);
+        0 3px 10px rgba(0,0,0,.16);
 
     z-index:20;
 }
 
 .telegram svg{
     width:22px;
-
     height:22px;
 
     fill:#fff;
 }
 
 
-/* =====================================================
+/* =========================
    TOAST
-===================================================== */
+========================= */
 
 .toast{
     position:fixed;
 
     left:50%;
-
     bottom:61px;
 
     transform:
-        translate(
-            -50%,
-            10px
-        );
+        translate(-50%,10px);
 
     opacity:0;
 
     pointer-events:none;
 
-    padding:
-        7px
-        11px;
+    padding:7px 11px;
 
     border-radius:8px;
 
     background:
-        rgba(
-            20,
-            20,
-            20,
-            .94
-        );
+        rgba(20,20,20,.94);
 
     color:#fff;
 
@@ -734,16 +681,13 @@ button{
     opacity:1;
 
     transform:
-        translate(
-            -50%,
-            0
-        );
+        translate(-50%,0);
 }
 
 
-/* =====================================================
-   SMALL PHONES
-===================================================== */
+/* =========================
+   SMALL DEVICES
+========================= */
 
 @media(max-width:380px){
 
@@ -752,59 +696,81 @@ button{
         padding-right:14px;
     }
 
+
     .logo{
-        font-size:22px;
+        width:200px;
+        height:80px;
+
+        margin-bottom:8px;
     }
+
+
+    .logo-name{
+        font-size:22px;
+        line-height:26px;
+    }
+
 
     .subtitle{
         font-size:11.5px;
     }
 
+
     .steps{
-        width:72%;
+        width:52%;
     }
+
 
     .poster{
         height:auto;
 
-        aspect-ratio:
-            655 / 261;
+        aspect-ratio:655 / 261;
     }
+
 
     .card{
         padding-left:18px;
         padding-right:18px;
     }
 
+
     .card-title{
         font-size:26px;
-
         line-height:31px;
     }
+
 
     .description{
         font-size:11.5px;
     }
 
+
     .input-box{
         height:47px;
     }
+
 
     .input-box input{
         font-size:15px;
     }
 
+
     .input-box input::placeholder{
         font-size:15px;
     }
 
+
     .continue{
         height:52px;
+        font-size:15px;
     }
+
 
     .register{
         height:49px;
+        font-size:15px;
     }
+
 
     .security-text{
         font-size:10px;
@@ -813,23 +779,41 @@ button{
 }
 
 
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
-
 @media(max-width:350px){
+
+    .logo{
+        width:190px;
+        height:76px;
+    }
+
+
+    .steps{
+        width:48%;
+    }
+
 
     .card-title{
         font-size:23px;
-
         line-height:28px;
     }
+
 
     .input-box input{
         font-size:14px;
     }
 
+
     .input-box input::placeholder{
+        font-size:14px;
+    }
+
+
+    .continue{
+        font-size:14px;
+    }
+
+
+    .register{
         font-size:14px;
     }
 
@@ -842,31 +826,45 @@ button{
 
 <body>
 
-
 <div class="page">
 
 
-    <!-- =================================================
+    <!-- =========================
          HEADER
-    ================================================= -->
+    ========================== -->
 
     <div class="header">
 
-        <div class="logo">
+
+        <!-- TOP LOGO -->
+
+        <img
+            class="logo"
+            src="https://i.ibb.co/fVqwvyvF/aa.webp"
+            alt="TOP PAY"
+        >
+
+
+        <!-- PAGE NAME -->
+
+        <div class="logo-name">
             TOP PAY
         </div>
+
+
+        <!-- SUBTITLE -->
 
         <div class="subtitle">
             Secure Payment Gateway
         </div>
 
+
     </div>
 
 
-
-    <!-- =================================================
-         STEPPER
-    ================================================= -->
+    <!-- =========================
+         STEPS
+    ========================== -->
 
     <div class="steps">
 
@@ -903,33 +901,31 @@ button{
     </div>
 
 
-
-    <!-- =================================================
-         POSTER / VIEWPAGER
-    ================================================= -->
+    <!-- =========================
+         POSTER
+    ========================== -->
 
     <div class="poster">
 
 
         <div
             class="slides-track"
-            id="slidesTrack"
-        ></div>
+            id="slidesTrack">
+        </div>
 
 
         <div
             class="dots"
-            id="dots"
-        ></div>
+            id="dots">
+        </div>
 
 
     </div>
 
 
-
-    <!-- =================================================
-         MAIN CARD
-    ================================================= -->
+    <!-- =========================
+         CARD
+    ========================== -->
 
     <div class="card">
 
@@ -940,10 +936,11 @@ button{
 
 
         <p class="description">
+
             Please provide your registered mobile number and<br>
             password
-        </p>
 
+        </p>
 
 
         <form id="loginForm">
@@ -963,9 +960,7 @@ button{
 
                     <svg viewBox="0 0 24 24">
 
-                        <path
-                            d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.72 21 3 13.28 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"
-                        />
+                        <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.72 21 3 13.28 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/>
 
                     </svg>
 
@@ -985,7 +980,6 @@ button{
             </div>
 
 
-
             <!-- PASSWORD -->
 
             <label class="label password-label">
@@ -1000,9 +994,7 @@ button{
 
                     <svg viewBox="0 0 24 24">
 
-                        <path
-                            d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Zm3 4a2 2 0 1 0 2 1.73V18h-2v-2.27A2 2 0 0 0 12 14Z"
-                        />
+                        <path d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Zm3 4a2 2 0 1 0 2 1.73V18h-2v-2.27A2 2 0 0 0 12 14Z"/>
 
                     </svg>
 
@@ -1020,20 +1012,19 @@ button{
             </div>
 
 
-
             <!-- FORGOT -->
 
             <div class="forgot">
 
                 <button
                     type="button"
-                    id="forgot"
-                >
+                    id="forgot">
+
                     Forget Password
+
                 </button>
 
             </div>
-
 
 
             <!-- CONTINUE -->
@@ -1042,8 +1033,7 @@ button{
                 type="submit"
                 id="continueBtn"
                 class="continue"
-                disabled
-            >
+                disabled>
 
                 <span>
                     Continue to MPIN
@@ -1056,41 +1046,38 @@ button{
             </button>
 
 
-
             <!-- REGISTER -->
 
             <button
                 type="button"
                 id="registerBtn"
-                class="register"
-            >
+                class="register">
+
                 Register New Account
+
             </button>
 
 
         </form>
 
 
-
-        <!-- =================================================
-             SECURITY
-        ================================================= -->
+        <!-- SECURITY -->
 
         <div class="security">
 
 
             <svg viewBox="0 0 24 24">
 
-                <path
-                    d="M12 2 20 5v6c0 5.25-3.43 9.86-8 11-4.57-1.14-8-5.75-8-11V5l8-3Zm0 3.08L8 6.58V11c0 3.85 2.37 7.28 4 8.3 1.63-1.02 4-4.45 4-8.3V6.58l-4-1.5Z"
-                />
+                <path d="M12 2 20 5v6c0 5.25-3.43 9.86-8 11-4.57-1.14-8-5.75-8-11V5l8-3Zm0 3.08L8 6.58V11c0 3.85 2.37 7.28 4 8.3 1.63-1.02 4-4.45 4-8.3V6.58l-4-1.5Z"/>
 
             </svg>
 
 
             <p class="security-text">
+
                 Your credentials are securely encrypted.
                 MPIN adds extra security to authorize transactions.
+
             </p>
 
 
@@ -1103,48 +1090,38 @@ button{
 </div>
 
 
-
-<!-- =====================================================
+<!-- =========================
      TELEGRAM
-===================================================== -->
+========================= -->
 
 <a
     href="#"
     class="telegram"
     id="telegram"
-    aria-label="Telegram"
->
-
+    aria-label="Telegram">
 
     <svg viewBox="0 0 24 24">
 
-        <path
-            d="M21.4 3.18 18.15 20c-.25 1.19-.91 1.49-1.84.93l-5.1-3.76-2.46 2.37c-.27.27-.5.5-1.02.5l.36-5.2 9.47-8.55c.41-.36-.09-.56-.64-.2L5.22 13.32.18 11.74c-1.1-.34-1.12-1.1.23-1.6L20.1 2.56c.92-.34 1.73.22 1.3.62Z"
-        />
+        <path d="M21.4 3.18 18.15 20c-.25 1.19-.91 1.49-1.84.93l-5.1-3.76-2.46 2.37c-.27.27-.5.5-1.02.5l.36-5.2 9.47-8.55c.41-.36-.09-.56-.64-.2L5.22 13.32.18 11.74c-1.1-.34-1.12-1.1.23-1.6L20.1 2.56c.92-.34 1.73.22 1.3.62Z"/>
 
     </svg>
-
 
 </a>
 
 
-
-<!-- =====================================================
-     TOAST
-===================================================== -->
+<!-- TOAST -->
 
 <div
     class="toast"
-    id="toast"
-></div>
-
+    id="toast">
+</div>
 
 
 <script>
 
-/* =====================================================
-   DIRECT POSTER URLS
-===================================================== */
+/* =========================
+   POSTERS
+========================= */
 
 const POSTER_1 =
     "https://i.ibb.co/hRMF9Dwp/IMG-1764.jpg";
@@ -1152,15 +1129,6 @@ const POSTER_1 =
 const POSTER_2 =
     "https://i.ibb.co/hJPmhB2X/IMG-1763.jpg";
 
-
-/*
-    VIEWPAGER ORDER
-
-    1 → IMG-1764
-    2 → IMG-1763
-    3 → IMG-1764
-    4 → IMG-1763
-*/
 
 const posters = [
 
@@ -1177,9 +1145,9 @@ let currentSlide = 0;
 let sliderTimer;
 
 
-/* =====================================================
-   CREATE VIEWPAGER SLIDES
-===================================================== */
+/* =========================
+   CREATE SLIDES
+========================= */
 
 function createSlides(){
 
@@ -1220,12 +1188,9 @@ function createSlides(){
                 );
 
 
-            image.src =
-                url;
+            image.src = url;
 
-
-            image.alt =
-                "TOP PAY";
+            image.alt = "TOP PAY";
 
 
             image.loading =
@@ -1263,7 +1228,6 @@ function createSlides(){
                 dot
             );
 
-
         }
     );
 
@@ -1278,9 +1242,9 @@ function createSlides(){
 }
 
 
-/* =====================================================
-   UPDATE VIEWPAGER
-===================================================== */
+/* =========================
+   UPDATE SLIDER
+========================= */
 
 function updateSlider(){
 
@@ -1295,10 +1259,6 @@ function updateSlider(){
             ".dot"
         );
 
-
-    /*
-       Move exactly one full poster width
-    */
 
     track.style.transform =
         "translate3d(-" +
@@ -1322,9 +1282,9 @@ function updateSlider(){
 }
 
 
-/* =====================================================
+/* =========================
    AUTO SLIDER
-===================================================== */
+========================= */
 
 function startSlider(){
 
@@ -1336,15 +1296,9 @@ function startSlider(){
     if(
         posters.length <= 1
     ){
-
         return;
-
     }
 
-
-    /*
-       NEXT POSTER EVERY 3 SECONDS
-    */
 
     sliderTimer =
         setInterval(
@@ -1365,6 +1319,7 @@ function startSlider(){
 
                 updateSlider();
 
+
             },
             3000
         );
@@ -1372,9 +1327,9 @@ function startSlider(){
 }
 
 
-/* =====================================================
-   FORM ELEMENTS
-===================================================== */
+/* =========================
+   FORM
+========================= */
 
 const mobile =
     document.getElementById(
@@ -1393,10 +1348,6 @@ const continueBtn =
         "continueBtn"
     );
 
-
-/* =====================================================
-   FORM VALIDATION
-===================================================== */
 
 function validate(){
 
@@ -1447,9 +1398,9 @@ password.addEventListener(
 );
 
 
-/* =====================================================
+/* =========================
    TOAST
-===================================================== */
+========================= */
 
 function showToast(message){
 
@@ -1488,9 +1439,9 @@ function showToast(message){
 }
 
 
-/* =====================================================
+/* =========================
    LOGIN
-===================================================== */
+========================= */
 
 document
     .getElementById(
@@ -1520,9 +1471,9 @@ document
     );
 
 
-/* =====================================================
-   FORGOT PASSWORD
-===================================================== */
+/* =========================
+   FORGOT
+========================= */
 
 document
     .getElementById(
@@ -1540,9 +1491,9 @@ document
     );
 
 
-/* =====================================================
+/* =========================
    REGISTER
-===================================================== */
+========================= */
 
 document
     .getElementById(
@@ -1560,9 +1511,9 @@ document
     );
 
 
-/* =====================================================
+/* =========================
    TELEGRAM
-===================================================== */
+========================= */
 
 document
     .getElementById(
@@ -1583,15 +1534,13 @@ document
     );
 
 
-/* =====================================================
+/* =========================
    START
-===================================================== */
+========================= */
 
 createSlides();
 
 </script>
 
-
 </body>
-
 </html>
