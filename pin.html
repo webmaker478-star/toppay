@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>TOP PAY • MPIN</title>
+
+<link
+    rel="icon"
+    type="image/webp"
+    href="https://i.ibb.co/fVqwvyvF/aa.webp"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="https://i.ibb.co/fVqwvyvF/aa.webp"
+>
+
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*{
+    box-sizing:border-box;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+
+    min-height:100%;
+
+    background:#f5f5f5;
+}
+
+body{
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    color:#111;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+    width:100%;
+    max-width:560px;
+
+    margin:0 auto;
+
+    padding:8px 16px 15px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    width:100%;
+
+    text-align:center;
+}
+
+.logo{
+    width:160px;
+    height:64px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:0 auto 8px;
+}
+
+.logo-name{
+    margin-top:0;
+
+    color:#2866c8;
+
+    font-size:23px;
+    line-height:27px;
+
+    font-weight:700;
+
+    letter-spacing:-.4px;
+}
+
+.subtitle{
+    margin-top:1px;
+
+    color:#777;
+
+    font-size:12px;
+    line-height:15px;
+
+    font-weight:400;
+}
+
+
+/* =====================================================
+   STEPS
+===================================================== */
+
+.steps{
+    width:48%;
+
+    margin:13px auto 2px;
+
+    display:flex;
+
+    align-items:flex-start;
+}
+
+.step{
+    min-width:31px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Text",
+        "Helvetica Neue",
+        sans-serif;
+}
+
+.circle{
+    width:30px;
+    height:30px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    -webkit-font-smoothing:antialiased;
+}
+
+
+/* COMPLETED ACCOUNT */
+
+.completed .circle{
+    background:#20c765;
+    color:#fff;
+}
+
+.completed .step-name{
+    color:#20b963;
+}
+
+
+/* ACTIVE MPIN */
+
+.active .circle{
+    background:#2c68d0;
+    color:#fff;
+}
+
+.active .step-name{
+    color:#2c68d0;
+}
+
+
+/* STEP TEXT */
+
+.step-name{
+    margin-top:4px;
+
+    font-size:12.5px;
+    line-height:14px;
+
+    white-space:nowrap;
+
+    font-weight:400;
+}
+
+
+/* CONNECTOR */
+
+.step-line{
+    flex:1;
+
+    height:2.5px;
+
+    border-radius:5px;
+
+    background:#2c68d0;
+
+    margin:12px 3px 0;
+}
+
+
+/* =====================================================
+   POSTER
+===================================================== */
+
+.poster{
+    width:100%;
+    height:158px;
+
+    position:relative;
+
+    margin:0 0 2px;
+
+    overflow:hidden;
+
+    border-radius:17px;
+
+    background:#111;
+}
+
+.slides-track{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    transition:
+        transform .6s cubic-bezier(.25,.8,.25,1);
+
+    will-change:transform;
+}
+
+.slide{
+    position:relative;
+
+    flex:0 0 100%;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+}
+
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+.dots{
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:8px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:5px;
+
+    z-index:5;
+}
+
+.dot{
+    width:5px;
+    height:5px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.55);
+
+    transition:
+        width .25s ease,
+        background .25s ease;
+}
+
+.dot.active{
+    width:14px;
+
+    background:#fff;
+}
+
+
+/* =====================================================
+   MPIN CARD
+===================================================== */
+
+.card{
+    background:#fff;
+
+    border-radius:0 0 17px 17px;
+
+    padding:2px 21px 22px;
+}
+
+
+/* TITLE */
+
+.card-title{
+    margin:0;
+
+    text-align:center;
+
+    font-size:22px;
+    line-height:28px;
+
+    font-weight:700;
+
+    letter-spacing:-.25px;
+
+    white-space:nowrap;
+}
+
+
+/* DESCRIPTION */
+
+.description{
+    margin:11px 0 25px;
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:12px;
+    line-height:15px;
+
+    font-weight:400;
+}
+
+
+/* =====================================================
+   MPIN BOXES
+===================================================== */
+
+.pin-container{
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+}
+
+.pin-box{
+    width:100%;
+
+    max-width:72px;
+
+    height:56px;
+
+    border:1.3px solid #dedede;
+
+    border-radius:15px;
+
+    background:#fff;
+
+    outline:none;
+
+    text-align:center;
+
+    color:#111;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    font-size:22px;
+
+    font-weight:500;
+
+    caret-color:#2e67c9;
+
+    transition:
+        border-color .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
+}
+
+.pin-box:focus{
+    border-color:#aebfe0;
+
+    box-shadow:
+        0 0 0 3px rgba(46,103,201,.07);
+}
+
+.pin-box.filled{
+    border-color:#cbd4e3;
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+.login-button{
+    width:100%;
+
+    height:54px;
+
+    margin-top:35px;
+
+    border:0;
+
+    border-radius:14px;
+
+    background:#bec9f3;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:5px;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .12s ease;
+}
+
+.login-button.enabled{
+    background:#2e67c9;
+}
+
+.login-button:active{
+    transform:scale(.99);
+}
+
+.login-button:disabled{
+    cursor:default;
+}
+
+.login-arrow{
+    font-size:18px;
+
+    font-weight:300;
+}
+
+
+/* =====================================================
+   SECURITY
+===================================================== */
+
+.security{
+    margin-top:17px;
+
+    text-align:center;
+
+    color:#888;
+
+    font-size:11px;
+
+    line-height:15px;
+}
+
+.security strong{
+    color:#555;
+
+    font-weight:500;
+}
+
+
+/* =====================================================
+   TELEGRAM
+===================================================== */
+
+.telegram{
+    position:fixed;
+
+    right:18px;
+    bottom:18px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:#229ed9;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.18);
+
+    z-index:100;
+}
+
+.telegram svg{
+    width:23px;
+    height:23px;
+
+    fill:#fff;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+    position:fixed;
+
+    left:50%;
+    bottom:82px;
+
+    transform:
+        translateX(-50%)
+        translateY(15px);
+
+    background:#222;
+
+    color:#fff;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+
+    z-index:200;
+
+    white-space:nowrap;
+}
+
+.toast.show{
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:430px){
+
+    .pin-container{
+        gap:7px;
+    }
+
+    .pin-box{
+        height:56px;
+
+        border-radius:15px;
+    }
+}
+
+
+@media (max-width:380px){
+
+    .steps{
+        width:52%;
+
+        margin-bottom:2px;
+    }
+
+    .poster{
+        height:auto;
+
+        aspect-ratio:655 / 261;
+
+        margin-top:0;
+
+        margin-bottom:2px;
+    }
+
+    .card{
+        padding-top:2px;
+    }
+
+    .pin-container{
+        gap:6px;
+    }
+
+    .pin-box{
+        height:52px;
+
+        border-radius:13px;
+
+        font-size:20px;
+    }
+
+    .login-button{
+        margin-top:32px;
+    }
+}
+
+
+@media (max-width:350px){
+
+    .steps{
+        width:48%;
+    }
+
+    .card-title{
+        font-size:21px;
+
+        line-height:27px;
+    }
+
+    .description{
+        margin-bottom:22px;
+    }
+
+    .pin-container{
+        gap:5px;
+    }
+
+    .pin-box{
+        height:49px;
+
+        border-radius:12px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <img
+        class="logo"
+        src="https://i.ibb.co/fVqwvyvF/aa.webp"
+        alt="TOP PAY"
+    >
+
+    <div class="logo-name">
+        TOP PAY
+    </div>
+
+    <div class="subtitle">
+        Secure Payment Gateway
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     STEPS
+===================================================== -->
+
+<div class="steps">
+
+
+    <!-- ACCOUNT COMPLETED -->
+
+    <div class="step completed">
+
+        <div class="circle">
+            1
+        </div>
+
+        <div class="step-name">
+            Account
+        </div>
+
+    </div>
+
+
+    <!-- CONNECTOR -->
+
+    <div class="step-line"></div>
+
+
+    <!-- MPIN ACTIVE -->
+
+    <div class="step active">
+
+        <div class="circle">
+            2
+        </div>
+
+        <div class="step-name">
+            MPIN
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     POSTER
+===================================================== -->
+
+<div class="poster">
+
+    <div
+        class="slides-track"
+        id="slidesTrack">
+    </div>
+
+
+    <div
+        class="dots"
+        id="dots">
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MPIN CARD
+===================================================== -->
+
+<div class="card">
+
+
+    <h1 class="card-title">
+        Enter Your MPIN
+    </h1>
+
+
+    <p class="description">
+        Enter your 6-digit Mobile PIN
+    </p>
+
+
+    <!-- =================================================
+         PIN INPUTS
+    ================================================= -->
+
+    <div
+        class="pin-container"
+        id="pinContainer">
+
+
+        <input
+            class="pin-box"
+            type="tel"
+            inputmode="numeric"
+            maxlength="1"
+            autocomplete="one-time-code"
+            aria-label="MPIN digit 1"
+        >
+
+
+        <input
+            class="pin-box"
+            type="tel"
+            inputmode="numeric"
+            maxlength="1"
+            aria-label="MPIN digit 2"
+        >
+
+
+        <input
+            class="pin-box"
+            type="tel"
+            inputmode="numeric"
+            maxlength="1"
+            aria-label="MPIN digit 3"
+        >
+
+
+        <input
+            class="pin-box"
+            type="tel"
+            inputmode="numeric"
+            maxlength="1"
+            aria-label="MPIN digit 4"
+        >
+
+
+        <input
+            class="pin-box"
+            type="tel"
+            inputmode="numeric"
+            maxlength="1"
+            aria-label="MPIN digit 5"
+        >
+
+
+        <input
+            class="pin-box"
+            type="tel"
+            inputmode="numeric"
+            maxlength="1"
+            aria-label="MPIN digit 6"
+        >
+
+    </div>
+
+
+    <!-- =================================================
+         LOGIN
+    ================================================= -->
+
+    <button
+        class="login-button"
+        id="loginButton"
+        type="button"
+        disabled>
+
+        <span>
+            Login &amp; Continue
+        </span>
+
+        <span class="login-arrow">
+            →
+        </span>
+
+    </button>
+
+
+    <!-- =================================================
+         SECURITY
+    ================================================= -->
+
+    <div class="security">
+
+        🔒 Your information is securely encrypted.
+
+        <br>
+
+        <strong>
+            Never share your MPIN with anyone.
+        </strong>
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     TELEGRAM
+===================================================== -->
+
+<div
+    class="telegram"
+    id="telegramBtn">
+
+    <svg viewBox="0 0 24 24">
+
+        <path
+            d="M21.4 3.6L18.2 20
+            c-.24 1.16-.87 1.45-1.76.9
+            l-4.85-3.58-2.34 2.25
+            c-.26.26-.48.48-.98.48
+            l.35-4.94 8.99-8.12
+            c.39-.35-.08-.55-.6-.2
+            L6.9 13.95 2.15 12.47
+            c-1.03-.32-1.05-1.03.21-1.52
+            L20.9 3.72
+            c.86-.32 1.61.2 1.5-.12z">
+        </path>
+
+    </svg>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+<script>
+
+/* =====================================================
+   POSTERS
+===================================================== */
+
+const POSTER_1 =
+    "https://i.ibb.co/hRMF9Dwp/IMG-1764.jpg";
+
+const POSTER_2 =
+    "https://i.ibb.co/hJPmhB2X/IMG-1763.jpg";
+
+
+const posters = [
+    POSTER_1,
+    POSTER_2,
+    POSTER_1,
+    POSTER_2
+];
+
+
+let currentSlide = 0;
+
+let sliderTimer;
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const track =
+    document.getElementById("slidesTrack");
+
+const dots =
+    document.getElementById("dots");
+
+
+/* =====================================================
+   CREATE SLIDES
+===================================================== */
+
+function createSlides(){
+
+    track.innerHTML = "";
+
+    dots.innerHTML = "";
+
+
+    posters.forEach(
+        (poster,index)=>{
+
+
+            const slide =
+                document.createElement("div");
+
+            slide.className =
+                "slide";
+
+
+            const img =
+                document.createElement("img");
+
+            img.src =
+                poster;
+
+            img.alt =
+                "TOP PAY";
+
+
+            slide.appendChild(img);
+
+            track.appendChild(slide);
+
+
+            const dot =
+                document.createElement("span");
+
+            dot.className =
+                "dot" +
+                (
+                    index === 0
+                    ? " active"
+                    : ""
+                );
+
+
+            dot.addEventListener(
+                "click",
+                ()=>{
+
+                    currentSlide =
+                        index;
+
+                    updateSlider();
+
+                    restartSlider();
+
+                }
+            );
+
+
+            dots.appendChild(dot);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE SLIDER
+===================================================== */
+
+function updateSlider(){
+
+    track.style.transform =
+        "translate3d(-" +
+        (currentSlide * 100) +
+        "%,0,0)";
+
+
+    document
+        .querySelectorAll(".dot")
+        .forEach(
+            (dot,index)=>{
+
+                dot.classList.toggle(
+                    "active",
+                    index === currentSlide
+                );
+
+            }
+        );
+
+}
+
+
+/* =====================================================
+   START SLIDER
+===================================================== */
+
+function startSlider(){
+
+    sliderTimer =
+        setInterval(
+            ()=>{
+
+                currentSlide++;
+
+
+                if(
+                    currentSlide >=
+                    posters.length
+                ){
+
+                    currentSlide = 0;
+
+                }
+
+
+                updateSlider();
+
+            },
+            3000
+        );
+
+}
+
+
+/* =====================================================
+   RESTART SLIDER
+===================================================== */
+
+function restartSlider(){
+
+    clearInterval(
+        sliderTimer
+    );
+
+    startSlider();
+
+}
+
+
+/* =====================================================
+   MPIN
+===================================================== */
+
+const pinInputs =
+    Array.from(
+        document.querySelectorAll(
+            ".pin-box"
+        )
+    );
+
+
+const loginButton =
+    document.getElementById(
+        "loginButton"
+    );
+
+
+/* =====================================================
+   CHECK PIN
+===================================================== */
+
+function checkPin(){
+
+    const pin =
+        pinInputs
+            .map(
+                input =>
+                    input.value
+            )
+            .join("");
+
+
+    const complete =
+        pin.length === 6 &&
+        /^\d{6}$/.test(pin);
+
+
+    loginButton.disabled =
+        !complete;
+
+
+    loginButton.classList.toggle(
+        "enabled",
+        complete
+    );
+
+}
+
+
+/* =====================================================
+   PIN INPUT EVENTS
+===================================================== */
+
+pinInputs.forEach(
+    (input,index)=>{
+
+
+        input.addEventListener(
+            "input",
+            event=>{
+
+                let value =
+                    event.target.value
+                        .replace(/\D/g,"");
+
+
+                /*
+                 * Handle paste / multiple digits
+                 */
+
+                if(value.length > 1){
+
+                    const digits =
+                        value
+                            .slice(0,6)
+                            .split("");
+
+
+                    digits.forEach(
+                        (digit,digitIndex)=>{
+
+                            if(
+                                pinInputs[
+                                    digitIndex
+                                ]
+                            ){
+
+                                pinInputs[
+                                    digitIndex
+                                ].value =
+                                    digit;
+
+                            }
+
+                        }
+                    );
+
+
+                    const lastIndex =
+                        Math.min(
+                            digits.length,
+                            6
+                        ) - 1;
+
+
+                    if(
+                        pinInputs[lastIndex]
+                    ){
+
+                        pinInputs[lastIndex]
+                            .focus();
+
+                    }
+
+                }
+                else{
+
+                    input.value =
+                        value.slice(0,1);
+
+
+                    if(
+                        value &&
+                        index <
+                        pinInputs.length - 1
+                    ){
+
+                        pinInputs[
+                            index + 1
+                        ].focus();
+
+                    }
+
+                }
+
+
+                pinInputs.forEach(
+                    box=>{
+
+                        box.classList.toggle(
+                            "filled",
+                            box.value.length > 0
+                        );
+
+                    }
+                );
+
+
+                checkPin();
+
+            }
+        );
+
+
+        /* BACKSPACE */
+
+        input.addEventListener(
+            "keydown",
+            event=>{
+
+                if(
+                    event.key ===
+                    "Backspace" &&
+                    !input.value &&
+                    index > 0
+                ){
+
+                    pinInputs[
+                        index - 1
+                    ].focus();
+
+                }
+
+            }
+        );
+
+
+        /* PASTE */
+
+        input.addEventListener(
+            "paste",
+            event=>{
+
+                event.preventDefault();
+
+
+                const pasted =
+                    (
+                        event.clipboardData
+                            .getData("text") ||
+                        ""
+                    )
+                    .replace(/\D/g,"")
+                    .slice(0,6);
+
+
+                pasted
+                    .split("")
+                    .forEach(
+                        (digit,digitIndex)=>{
+
+                            if(
+                                pinInputs[
+                                    digitIndex
+                                ]
+                            ){
+
+                                pinInputs[
+                                    digitIndex
+                                ].value =
+                                    digit;
+
+                            }
+
+                        }
+                    );
+
+
+                const focusIndex =
+                    Math.min(
+                        pasted.length,
+                        6
+                    ) - 1;
+
+
+                if(
+                    focusIndex >= 0 &&
+                    pinInputs[focusIndex]
+                ){
+
+                    pinInputs[
+                        focusIndex
+                    ].focus();
+
+                }
+
+
+                pinInputs.forEach(
+                    box=>{
+
+                        box.classList.toggle(
+                            "filled",
+                            box.value.length > 0
+                        );
+
+                    }
+                );
+
+
+                checkPin();
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+loginButton.addEventListener(
+    "click",
+    ()=>{
+
+        if(
+            loginButton.disabled
+        ){
+
+            return;
+
+        }
+
+
+        const pin =
+            pinInputs
+                .map(
+                    input =>
+                        input.value
+                )
+                .join("");
+
+
+        if(
+            pin.length !== 6
+        ){
+
+            return;
+
+        }
+
+
+        showToast(
+            "MPIN accepted."
+        );
+
+    }
+);
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+const toast =
+    document.getElementById(
+        "toast"
+    );
+
+
+function showToast(message){
+
+    toast.textContent =
+        message;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+        ()=>{
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        2200
+    );
+
+}
+
+
+/* =====================================================
+   TELEGRAM
+===================================================== */
+
+document
+    .getElementById(
+        "telegramBtn"
+    )
+    .addEventListener(
+        "click",
+        ()=>{
+
+            showToast(
+                "Telegram support selected."
+            );
+
+        }
+    );
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+createSlides();
+
+updateSlider();
+
+startSlider();
+
+</script>
+
+</body>
+</html>
