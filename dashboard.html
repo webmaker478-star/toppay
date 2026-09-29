@@ -22,26 +22,19 @@
     href="https://i.ibb.co/fVqwvyvF/aa.webp"
 >
 
-
 <style>
-
-/* =====================================================
-   BASE
-===================================================== */
 
 *{
     box-sizing:border-box;
-
     -webkit-tap-highlight-color:transparent;
 }
 
 html,
 body{
-    width:100%;
-    min-height:100%;
-
     margin:0;
     padding:0;
+    width:100%;
+    min-height:100%;
 }
 
 body{
@@ -57,32 +50,43 @@ body{
         sans-serif;
 
     color:#111;
-
-    overflow-x:hidden;
 }
 
 
 /* =====================================================
-   TOP BLUE HEADER
+   PAGE
+===================================================== */
+
+.page{
+    width:100%;
+    max-width:560px;
+
+    min-height:100vh;
+
+    margin:0 auto;
+
+    position:relative;
+}
+
+
+/* =====================================================
+   BLUE HEADER
 ===================================================== */
 
 .top-header{
     width:100%;
-
-    height:345px;
+    height:245px;
 
     background:
         linear-gradient(
             135deg,
             #0878ff 0%,
-            #075fe7 45%,
+            #075fe7 48%,
             #164fc8 100%
         );
 
     border-radius:
-        0 0 115px 115px;
-
-    position:relative;
+        0 0 72px 72px;
 
     display:flex;
 
@@ -90,7 +94,7 @@ body{
 
     align-items:center;
 
-    padding-top:52px;
+    padding-top:27px;
 }
 
 
@@ -99,8 +103,8 @@ body{
 ===================================================== */
 
 .logo-circle{
-    width:148px;
-    height:148px;
+    width:104px;
+    height:104px;
 
     border-radius:50%;
 
@@ -112,14 +116,11 @@ body{
     justify-content:center;
 
     overflow:hidden;
-
-    box-shadow:
-        0 2px 12px rgba(0,0,0,.05);
 }
 
 .logo-circle img{
-    width:116px;
-    height:116px;
+    width:82px;
+    height:82px;
 
     object-fit:contain;
 
@@ -128,23 +129,20 @@ body{
 
 
 /* =====================================================
-   TOP PAY TITLE
+   BRAND
 ===================================================== */
 
 .brand-name{
-    margin-top:4px;
+    margin-top:3px;
 
     color:#fff;
 
-    font-size:48px;
-
-    line-height:55px;
+    font-size:34px;
+    line-height:40px;
 
     font-weight:700;
 
-    letter-spacing:-1.2px;
-
-    text-align:center;
+    letter-spacing:-.7px;
 }
 
 
@@ -155,24 +153,24 @@ body{
 .success-card{
     position:absolute;
 
-    top:306px;
-
+    top:218px;
     left:50%;
 
     transform:translateX(-50%);
 
-    width:calc(100% - 44px);
+    width:calc(100% - 36px);
 
-    max-width:808px;
+    max-width:524px;
 
-    min-height:540px;
+    /* 40% shorter */
+    min-height:210px;
 
     background:#fff;
 
-    border-radius:38px;
+    border-radius:28px;
 
     padding:
-        68px 35px 50px;
+        28px 18px 25px;
 
     display:flex;
 
@@ -183,7 +181,7 @@ body{
     text-align:center;
 
     box-shadow:
-        0 12px 35px rgba(35,65,120,.08);
+        0 10px 30px rgba(35,65,120,.07);
 }
 
 
@@ -192,8 +190,8 @@ body{
 ===================================================== */
 
 .success-icon{
-    width:138px;
-    height:138px;
+    width:70px;
+    height:70px;
 
     border-radius:50%;
 
@@ -204,33 +202,31 @@ body{
     align-items:center;
     justify-content:center;
 
-    margin-bottom:30px;
+    margin-bottom:16px;
 }
 
 
-/*
-   CSS checkmark
-*/
+/* CHECK */
 
 .success-icon::before{
     content:"";
 
-    width:48px;
-    height:78px;
+    width:24px;
+    height:39px;
 
-    border-right:9px solid #34475a;
-    border-bottom:9px solid #34475a;
+    border-right:5px solid #34475a;
+    border-bottom:5px solid #34475a;
 
     transform:
         rotate(42deg)
-        translate(-5px,-5px);
+        translate(-2px,-2px);
 
-    border-radius:3px;
+    border-radius:2px;
 }
 
 
 /* =====================================================
-   SUCCESS TITLE
+   TITLE
 ===================================================== */
 
 .success-title{
@@ -238,13 +234,14 @@ body{
 
     color:#1e314b;
 
-    font-size:39px;
-
-    line-height:48px;
+    font-size:25px;
+    line-height:31px;
 
     font-weight:700;
 
-    letter-spacing:-.7px;
+    letter-spacing:-.35px;
+
+    white-space:nowrap;
 }
 
 
@@ -254,15 +251,14 @@ body{
 
 .success-description{
     margin:
-        20px 0 0;
+        9px 0 0;
 
-    max-width:690px;
+    max-width:440px;
 
     color:#66758b;
 
-    font-size:29px;
-
-    line-height:40px;
+    font-size:15px;
+    line-height:21px;
 
     font-weight:400;
 }
@@ -273,208 +269,183 @@ body{
 ===================================================== */
 
 .redirect-text{
-    margin-top:43px;
+    margin-top:16px;
 
     color:#2870d1;
 
-    font-size:29px;
-
-    line-height:38px;
+    font-size:17px;
+    line-height:23px;
 
     font-weight:700;
 }
 
 
 /* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media (max-width:600px){
-
-    .top-header{
-        height:345px;
-
-        border-radius:
-            0 0 105px 105px;
-
-        padding-top:52px;
-    }
-
-
-    .logo-circle{
-        width:148px;
-        height:148px;
-    }
-
-    .logo-circle img{
-        width:116px;
-        height:116px;
-    }
-
-
-    .brand-name{
-        font-size:48px;
-
-        line-height:55px;
-    }
-
-
-    .success-card{
-        top:306px;
-
-        width:calc(100% - 44px);
-
-        min-height:540px;
-
-        border-radius:38px;
-
-        padding:
-            68px 28px 45px;
-    }
-
-
-    .success-icon{
-        width:138px;
-        height:138px;
-
-        margin-bottom:30px;
-    }
-
-
-    .success-title{
-        font-size:39px;
-
-        line-height:48px;
-    }
-
-
-    .success-description{
-        font-size:29px;
-
-        line-height:40px;
-    }
-
-
-    .redirect-text{
-        font-size:29px;
-
-        line-height:38px;
-
-        margin-top:43px;
-    }
-}
-
-
-/* =====================================================
-   SMALL MOBILE
+   MOBILE
 ===================================================== */
 
 @media (max-width:430px){
 
     .top-header{
-        height:345px;
-
-        padding-top:52px;
+        height:245px;
 
         border-radius:
-            0 0 105px 105px;
+            0 0 72px 72px;
+
+        padding-top:27px;
     }
 
-
     .logo-circle{
-        width:148px;
-        height:148px;
+        width:104px;
+        height:104px;
     }
 
     .logo-circle img{
-        width:116px;
-        height:116px;
+        width:82px;
+        height:82px;
     }
-
 
     .brand-name{
-        font-size:45px;
-
-        line-height:52px;
+        font-size:34px;
+        line-height:40px;
     }
-
 
     .success-card{
-        top:306px;
+        top:218px;
 
-        width:calc(100% - 44px);
+        width:calc(100% - 36px);
 
-        min-height:540px;
+        min-height:210px;
 
-        border-radius:38px;
+        border-radius:28px;
 
         padding:
-            68px 18px 45px;
+            28px 15px 25px;
     }
-
 
     .success-icon{
-        width:138px;
-        height:138px;
+        width:70px;
+        height:70px;
 
-        margin-bottom:30px;
+        margin-bottom:16px;
     }
-
 
     .success-title{
-        font-size:30px;
-
-        line-height:38px;
-
-        white-space:nowrap;
+        font-size:25px;
+        line-height:31px;
     }
-
 
     .success-description{
-        margin-top:20px;
-
-        font-size:22px;
-
-        line-height:31px;
-
-        max-width:350px;
+        font-size:15px;
+        line-height:21px;
     }
 
-
     .redirect-text{
-        margin-top:43px;
+        font-size:17px;
+        line-height:23px;
 
-        font-size:22px;
-
-        line-height:30px;
+        margin-top:16px;
     }
 }
 
 
 /* =====================================================
-   VERY SMALL SCREEN
+   SMALL PHONES
 ===================================================== */
 
-@media (max-width:350px){
+@media (max-width:380px){
+
+    .top-header{
+        height:225px;
+
+        border-radius:
+            0 0 65px 65px;
+
+        padding-top:22px;
+    }
+
+    .logo-circle{
+        width:92px;
+        height:92px;
+    }
+
+    .logo-circle img{
+        width:72px;
+        height:72px;
+    }
+
+    .brand-name{
+        font-size:30px;
+        line-height:36px;
+    }
+
+    .success-card{
+        top:200px;
+
+        width:calc(100% - 30px);
+
+        min-height:195px;
+
+        border-radius:25px;
+
+        padding:
+            23px 12px 21px;
+    }
+
+    .success-icon{
+        width:62px;
+        height:62px;
+
+        margin-bottom:13px;
+    }
+
+    .success-icon::before{
+        width:21px;
+        height:35px;
+
+        border-width:5px;
+    }
 
     .success-title{
-        font-size:27px;
-
-        line-height:35px;
+        font-size:22px;
+        line-height:28px;
     }
-
 
     .success-description{
-        font-size:20px;
+        margin-top:7px;
 
-        line-height:29px;
+        font-size:14px;
+        line-height:20px;
     }
 
+    .redirect-text{
+        margin-top:13px;
+
+        font-size:16px;
+        line-height:21px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL
+===================================================== */
+
+@media (max-width:340px){
+
+    .success-title{
+        font-size:20px;
+        line-height:26px;
+    }
+
+    .success-description{
+        font-size:13px;
+        line-height:19px;
+    }
 
     .redirect-text{
-        font-size:20px;
-
-        line-height:28px;
+        font-size:15px;
+        line-height:20px;
     }
 }
 
@@ -485,93 +456,69 @@ body{
 
 <body>
 
-
-<!-- =====================================================
-     BLUE HEADER
-===================================================== -->
-
-<header class="top-header">
+<div class="page">
 
 
-    <div class="logo-circle">
+    <!-- HEADER -->
 
-        <img
-            src="https://i.ibb.co/fVqwvyvF/aa.webp"
-            alt="TOP PAY"
-        >
+    <header class="top-header">
 
-    </div>
+        <div class="logo-circle">
 
+            <img
+                src="https://i.ibb.co/fVqwvyvF/aa.webp"
+                alt="TOP PAY"
+            >
 
-    <div class="brand-name">
-        TOP PAY
-    </div>
+        </div>
 
+        <div class="brand-name">
+            TOP PAY
+        </div>
 
-</header>
-
-
-
-<!-- =====================================================
-     SUCCESS CARD
-===================================================== -->
-
-<main class="success-card">
+    </header>
 
 
-    <!-- SUCCESS CHECK -->
+    <!-- SUCCESS CARD -->
 
-    <div class="success-icon"></div>
+    <main class="success-card">
 
-
-    <!-- TITLE -->
-
-    <h1 class="success-title">
-        Wallet Successfully Updated
-    </h1>
+        <div class="success-icon"></div>
 
 
-    <!-- DESCRIPTION -->
-
-    <p class="success-description">
-        Your transaction has been processed securely
-        <br>
-        with TOP PAY.
-    </p>
+        <h1 class="success-title">
+            Wallet Successfully Updated
+        </h1>
 
 
-    <!-- REDIRECT -->
-
-    <div
-        class="redirect-text"
-        id="redirectText">
-
-        Redirecting in 4 seconds...
-
-    </div>
+        <p class="success-description">
+            Your transaction has been processed securely
+            <br>
+            with TOP PAY.
+        </p>
 
 
-</main>
+        <div
+            class="redirect-text"
+            id="redirectText">
 
+            Redirecting in 4 seconds...
+
+        </div>
+
+    </main>
+
+</div>
 
 
 <script>
 
 /* =====================================================
-   REDIRECT SETTINGS
+   REDIRECT
 ===================================================== */
 
-/*
-   Yahan apna destination URL set kar sakte ho.
-
-   Example:
-
-   const REDIRECT_URL =
-       "https://toppay.net.in/";
-
-*/
-
-const REDIRECT_URL = "https://toppay.net.in/";
+const REDIRECT_URL =
+    "https://toppay-azure.vercel.app/";
 
 
 /* =====================================================
@@ -592,7 +539,6 @@ const countdown =
 
             seconds--;
 
-
             if(seconds > 0){
 
                 redirectText.textContent =
@@ -602,21 +548,14 @@ const countdown =
 
             }
 
-
             if(seconds <= 0){
 
                 clearInterval(
                     countdown
                 );
 
-
                 redirectText.textContent =
                     "Redirecting...";
-
-
-                /*
-                 * Redirect
-                 */
 
                 window.location.href =
                     REDIRECT_URL;
@@ -628,7 +567,6 @@ const countdown =
     );
 
 </script>
-
 
 </body>
 </html>
