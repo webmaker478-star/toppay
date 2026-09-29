@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#24252c">
+
+<meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+>
+
+<meta
+    name="theme-color"
+    content="#24252c"
+>
+
 <title>TOP PAY</title>
 
+
 <style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
 *{
     box-sizing:border-box;
     -webkit-tap-highlight-color:transparent;
 }
 
-html,body{
+html,
+body{
     margin:0;
     padding:0;
+
     width:100%;
     min-height:100%;
-    background:#f3f6fc;
+
+    background:#f4f7fe;
+
     color:#111;
-    font-family:Arial,Helvetica,sans-serif;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     font-weight:400;
 }
 
@@ -27,7 +53,8 @@ body{
     overflow-x:hidden;
 }
 
-button,input{
+button,
+input{
     font-family:inherit;
 }
 
@@ -36,79 +63,127 @@ button{
     outline:0;
 }
 
+
+/* =====================================================
+   PAGE
+===================================================== */
+
 .page{
     width:100%;
     max-width:430px;
+
     min-height:100vh;
+
     margin:0 auto;
-    padding:0 27px 25px;
+
+    padding:
+        0
+        16px
+        15px;
 }
 
-/* LOGO */
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header{
+    width:100%;
+
     text-align:center;
-    padding-top:4px;
+
+    padding-top:3px;
 }
 
 .logo{
-    font-size:38px;
-    line-height:42px;
+    font-size:23px;
+
+    line-height:27px;
+
     color:#2866c8;
+
     font-weight:700;
-    letter-spacing:-.8px;
+
+    letter-spacing:-.4px;
 }
 
 .subtitle{
-    margin-top:2px;
+    margin-top:1px;
+
     color:#777;
-    font-size:20px;
-    line-height:25px;
+
+    font-size:12px;
+
+    line-height:15px;
+
     font-weight:400;
 }
 
-/* STEPPER */
+
+/* =====================================================
+   STEPPER
+===================================================== */
 
 .steps{
     width:68%;
-    margin:37px auto 35px;
+
+    margin:
+        13px
+        auto
+        39px;
+
     display:flex;
+
     align-items:flex-start;
 }
 
 .step{
-    min-width:51px;
+    min-width:31px;
+
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
 }
 
 .circle{
-    width:50px;
-    height:50px;
+    width:30px;
+    height:30px;
+
     border-radius:50%;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-    font-size:21px;
+
+    font-size:13px;
+
     font-weight:400;
 }
 
 .active .circle{
     background:#2c68d0;
+
     color:#fff;
 }
 
 .inactive .circle{
     background:#d9d9d9;
+
     color:#fff;
 }
 
 .step-name{
-    margin-top:6px;
-    font-size:21px;
-    line-height:23px;
+    margin-top:4px;
+
+    font-size:12.5px;
+
+    line-height:14px;
+
     white-space:nowrap;
+
     font-weight:400;
 }
 
@@ -122,26 +197,43 @@ button{
 
 .step-line{
     flex:1;
-    height:4px;
+
+    height:2.5px;
+
     border-radius:5px;
+
     background:#2c68d0;
-    margin:21px 4px 0;
+
+    margin:
+        12px
+        3px
+        0;
 }
 
-/* POSTER */
+
+/* =====================================================
+   POSTER
+===================================================== */
 
 .poster{
     width:100%;
-    height:261px;
+
+    height:158px;
+
     position:relative;
+
     overflow:hidden;
-    border-radius:28px;
+
+    border-radius:17px;
+
     background:#111;
 }
 
 .slide{
     position:absolute;
+
     inset:0;
+
     display:none;
 }
 
@@ -152,86 +244,151 @@ button{
 .slide img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     display:block;
 }
 
+
+/* =====================================================
+   POSTER DOTS
+===================================================== */
+
 .dots{
     position:absolute;
+
     left:0;
     right:0;
-    bottom:14px;
+
+    bottom:8px;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
-    gap:8px;
+
+    gap:5px;
 }
 
 .dot{
-    width:15px;
-    height:15px;
+    width:9px;
+    height:9px;
+
     border-radius:50%;
+
     background:#fff;
+
     opacity:.9;
 }
 
 .dot.active{
-    width:31px;
-    border-radius:10px;
+    width:19px;
+
+    border-radius:7px;
 }
 
-/* MAIN CARD */
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
 
 .card{
     background:#fff;
-    border-radius:0 0 28px 28px;
-    padding:37px 36px 36px;
+
+    border-radius:
+        0
+        0
+        17px
+        17px;
+
+    padding:
+        28px
+        21px
+        22px;
 }
 
-/* TITLE */
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
 
 .card-title{
     margin:0;
+
     text-align:center;
-    font-size:30px;
-    line-height:35px;
+
+    font-size:18px;
+
+    line-height:22px;
+
     font-weight:700;
-    letter-spacing:-.3px;
+
+    letter-spacing:-.2px;
 }
 
 .description{
-    margin:23px 0 35px;
+    margin:
+        13px
+        0
+        27px;
+
     text-align:center;
+
     color:#777;
-    font-size:19px;
-    line-height:25px;
+
+    font-size:12px;
+
+    line-height:15px;
+
     font-weight:400;
 }
 
-/* LABEL */
+
+/* =====================================================
+   LABEL
+===================================================== */
 
 .label{
     display:block;
-    margin-bottom:10px;
+
+    margin-bottom:6px;
+
     color:#111;
-    font-size:19px;
-    line-height:24px;
+
+    font-size:12px;
+
+    line-height:15px;
+
     font-weight:400;
 }
 
 .password-label{
-    margin-top:28px;
+    margin-top:17px;
 }
 
-/* INPUT */
+
+/* =====================================================
+   INPUT
+===================================================== */
 
 .input-box{
     width:100%;
-    height:81px;
-    border:2px solid #e4e4e4;
-    border-radius:24px;
+
+    height:49px;
+
+    border:
+        1.2px
+        solid
+        #e4e4e4;
+
+    border-radius:15px;
+
     display:flex;
+
     align-items:center;
+
     background:#fff;
 }
 
@@ -240,68 +397,109 @@ button{
 }
 
 .input-icon{
-    width:58px;
-    min-width:58px;
+    width:36px;
+
+    min-width:36px;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 }
 
 .input-icon svg{
-    width:29px;
-    height:29px;
+    width:18px;
+    height:18px;
+
     fill:#080808;
 }
 
 .input-box input{
     width:100%;
     height:100%;
+
     border:0;
+
     outline:0;
+
     background:transparent;
-    padding:0 15px 0 0;
+
+    padding:
+        0
+        8px
+        0
+        0;
+
     color:#111;
-    font-size:19px;
+
+    font-size:12px;
+
     font-weight:400;
 }
 
 .input-box input::placeholder{
     color:#b8b8b8;
+
     opacity:1;
 }
 
-/* FORGOT */
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
 
 .forgot{
     display:flex;
+
     justify-content:flex-end;
-    margin-top:13px;
+
+    margin-top:8px;
 }
 
 .forgot button{
     background:none;
+
     padding:0;
+
     color:#2d66c5;
-    font-size:20px;
-    line-height:25px;
+
+    font-size:12.5px;
+
+    line-height:16px;
+
     font-weight:400;
 }
 
-/* CONTINUE */
+
+/* =====================================================
+   CONTINUE BUTTON
+===================================================== */
 
 .continue{
     width:100%;
-    height:89px;
-    margin-top:32px;
-    border-radius:23px;
+
+    height:54px;
+
+    margin-top:19px;
+
+    border-radius:14px;
+
     background:#bec9f3;
+
     color:#fff;
-    font-size:20px;
+
+    font-size:12px;
+
     font-weight:400;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    gap:7px;
+
+    gap:4px;
 }
 
 .continue.enabled{
@@ -313,194 +511,344 @@ button{
 }
 
 .arrow{
-    font-size:26px;
+    font-size:15px;
+
     font-weight:300;
 }
 
-/* REGISTER */
+
+/* =====================================================
+   REGISTER BUTTON
+===================================================== */
 
 .register{
     width:100%;
-    height:84px;
-    margin-top:25px;
-    border-radius:23px;
+
+    height:51px;
+
+    margin-top:15px;
+
+    border-radius:14px;
+
     background:#20c55a;
+
     color:#fff;
-    font-size:20px;
+
+    font-size:12px;
+
     font-weight:400;
 }
 
-/* SECURITY */
+
+/* =====================================================
+   SECURITY BOX
+===================================================== */
 
 .security{
     width:100%;
-    min-height:103px;
-    margin-top:26px;
-    padding:17px 20px;
-    border-radius:22px;
+
+    min-height:62px;
+
+    margin-top:16px;
+
+    padding:
+        10px
+        12px;
+
+    border-radius:13px;
+
     background:#eef5fc;
+
     display:flex;
+
     align-items:flex-start;
-    gap:14px;
+
+    gap:8px;
+
     overflow:hidden;
 }
 
 .security svg{
-    width:27px;
-    min-width:27px;
-    height:27px;
+    width:16px;
+
+    min-width:16px;
+
+    height:16px;
+
     fill:#2869d1;
+
     margin-top:1px;
 }
 
 .security-text{
     margin:0;
-    font-size:17px;
-    line-height:24px;
+
+    font-size:10.5px;
+
+    line-height:14px;
+
     font-weight:400;
 }
 
-/* TELEGRAM */
+
+/* =====================================================
+   TELEGRAM
+===================================================== */
 
 .telegram{
     position:fixed;
-    right:21px;
-    bottom:19px;
-    width:68px;
-    height:68px;
+
+    right:13px;
+
+    bottom:12px;
+
+    width:41px;
+
+    height:41px;
+
     border-radius:50%;
+
     background:#119bd1;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    box-shadow:0 5px 16px rgba(0,0,0,.16);
+
+    box-shadow:
+        0
+        3px
+        10px
+        rgba(0,0,0,.16);
+
     z-index:20;
 }
 
 .telegram svg{
-    width:37px;
-    height:37px;
+    width:22px;
+
+    height:22px;
+
     fill:#fff;
 }
 
-/* TOAST */
+
+/* =====================================================
+   TOAST
+===================================================== */
 
 .toast{
     position:fixed;
+
     left:50%;
-    bottom:100px;
-    transform:translate(-50%,15px);
+
+    bottom:61px;
+
+    transform:
+        translate(
+            -50%,
+            10px
+        );
+
     opacity:0;
+
     pointer-events:none;
-    padding:11px 17px;
-    border-radius:13px;
-    background:rgba(20,20,20,.94);
+
+    padding:
+        7px
+        11px;
+
+    border-radius:8px;
+
+    background:
+        rgba(
+            20,
+            20,
+            20,
+            .94
+        );
+
     color:#fff;
-    font-size:14px;
+
+    font-size:9px;
+
     z-index:100;
+
     transition:.2s;
 }
 
 .toast.show{
     opacity:1;
-    transform:translate(-50%,0);
+
+    transform:
+        translate(
+            -50%,
+            0
+        );
 }
 
-/* SMALL PHONES */
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
 
 @media(max-width:380px){
 
     .page{
-        padding-left:20px;
-        padding-right:20px;
+        padding-left:14px;
+        padding-right:14px;
     }
 
     .logo{
-        font-size:36px;
+        font-size:22px;
     }
 
     .subtitle{
-        font-size:19px;
+        font-size:11.5px;
     }
 
     .steps{
         width:72%;
     }
 
-    .card{
-        padding-left:28px;
-        padding-right:28px;
-    }
-
     .poster{
         height:auto;
-        aspect-ratio:655/259;
+
+        aspect-ratio:
+            655 / 261;
+    }
+
+    .card{
+        padding-left:18px;
+        padding-right:18px;
     }
 
     .card-title{
-        font-size:28px;
+        font-size:17px;
     }
 
     .description{
-        font-size:18px;
+        font-size:11.5px;
     }
 
     .input-box{
-        height:76px;
+        height:47px;
     }
 
     .continue{
-        height:82px;
+        height:52px;
     }
 
     .register{
-        height:80px;
+        height:49px;
+    }
+
+    .security-text{
+        font-size:10px;
     }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="page">
 
+
+    <!-- =================================================
+         HEADER
+    ================================================= -->
+
     <div class="header">
-        <div class="logo">TOP PAY</div>
-        <div class="subtitle">Secure Payment Gateway</div>
+
+        <div class="logo">
+            TOP PAY
+        </div>
+
+        <div class="subtitle">
+            Secure Payment Gateway
+        </div>
+
     </div>
 
+
+
+    <!-- =================================================
+         STEPPER
+    ================================================= -->
 
     <div class="steps">
 
+
         <div class="step active">
-            <div class="circle">1</div>
-            <div class="step-name">Account</div>
+
+            <div class="circle">
+                1
+            </div>
+
+            <div class="step-name">
+                Account
+            </div>
+
         </div>
+
 
         <div class="step-line"></div>
 
+
         <div class="step inactive">
-            <div class="circle">2</div>
-            <div class="step-name">MPIN</div>
+
+            <div class="circle">
+                2
+            </div>
+
+            <div class="step-name">
+                MPIN
+            </div>
+
         </div>
+
 
     </div>
 
+
+
+    <!-- =================================================
+         POSTER
+    ================================================= -->
 
     <div class="poster">
 
+
         <div id="slides"></div>
 
-        <div class="dots" id="dots"></div>
+
+        <div
+            class="dots"
+            id="dots"
+        ></div>
+
 
     </div>
 
 
+
+    <!-- =================================================
+         MAIN CARD
+    ================================================= -->
+
     <div class="card">
+
 
         <h1 class="card-title">
             Enter Your Credentials
         </h1>
+
 
         <p class="description">
             Please provide your registered mobile number and<br>
@@ -508,64 +856,102 @@ button{
         </p>
 
 
+
+        <!-- =================================================
+             LOGIN FORM
+        ================================================= -->
+
         <form id="loginForm">
+
+
+            <!-- MOBILE -->
 
             <label class="label">
                 Mobile Number
             </label>
 
+
             <div class="input-box">
+
 
                 <div class="input-icon">
 
                     <svg viewBox="0 0 24 24">
-                        <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.72 21 3 13.28 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/>
+
+                        <path
+                            d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.72 21 3 13.28 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"
+                        />
+
                     </svg>
 
                 </div>
+
 
                 <input
                     id="mobile"
                     type="tel"
                     inputmode="numeric"
                     maxlength="10"
+                    autocomplete="tel"
                     placeholder="Enter 10-digit mobile number"
                 >
 
+
             </div>
 
+
+
+            <!-- PASSWORD -->
 
             <label class="label password-label">
                 Password
             </label>
 
+
             <div class="input-box">
+
 
                 <div class="input-icon">
 
                     <svg viewBox="0 0 24 24">
-                        <path d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Zm3 4a2 2 0 1 0 2 1.73V18h-2v-2.27A2 2 0 0 0 12 14Z"/>
+
+                        <path
+                            d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Zm3 4a2 2 0 1 0 2 1.73V18h-2v-2.27A2 2 0 0 0 12 14Z"
+                        />
+
                     </svg>
 
                 </div>
 
+
                 <input
                     id="password"
                     type="password"
+                    autocomplete="current-password"
                     placeholder="Enter password"
                 >
+
 
             </div>
 
 
+
+            <!-- FORGOT -->
+
             <div class="forgot">
 
-                <button type="button" id="forgot">
+                <button
+                    type="button"
+                    id="forgot"
+                >
                     Forget Password
                 </button>
 
             </div>
 
+
+
+            <!-- CONTINUE -->
 
             <button
                 type="submit"
@@ -573,10 +959,20 @@ button{
                 class="continue"
                 disabled
             >
-                <span>Continue to MPIN</span>
-                <span class="arrow">→</span>
+
+                <span>
+                    Continue to MPIN
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
             </button>
 
+
+
+            <!-- REGISTER -->
 
             <button
                 type="button"
@@ -586,79 +982,119 @@ button{
                 Register New Account
             </button>
 
+
         </form>
 
 
+
+        <!-- =================================================
+             SECURITY
+        ================================================= -->
+
         <div class="security">
 
+
             <svg viewBox="0 0 24 24">
-                <path d="M12 2 20 5v6c0 5.25-3.43 9.86-8 11-4.57-1.14-8-5.75-8-11V5l8-3Zm0 3.08L8 6.58V11c0 3.85 2.37 7.28 4 8.3 1.63-1.02 4-4.45 4-8.3V6.58l-4-1.5Z"/>
+
+                <path
+                    d="M12 2 20 5v6c0 5.25-3.43 9.86-8 11-4.57-1.14-8-5.75-8-11V5l8-3Zm0 3.08L8 6.58V11c0 3.85 2.37 7.28 4 8.3 1.63-1.02 4-4.45 4-8.3V6.58l-4-1.5Z"
+                />
+
             </svg>
+
 
             <p class="security-text">
                 Your credentials are securely encrypted.
                 MPIN adds extra security to authorize transactions.
             </p>
 
+
         </div>
 
+
     </div>
+
 
 </div>
 
 
-<a href="#" class="telegram" id="telegram">
+
+<!-- =====================================================
+     TELEGRAM
+===================================================== -->
+
+<a
+    href="#"
+    class="telegram"
+    id="telegram"
+    aria-label="Telegram"
+>
+
 
     <svg viewBox="0 0 24 24">
-        <path d="M21.4 3.18 18.15 20c-.25 1.19-.91 1.49-1.84.93l-5.1-3.76-2.46 2.37c-.27.27-.5.5-1.02.5l.36-5.2 9.47-8.55c.41-.36-.09-.56-.64-.2L5.22 13.32.18 11.74c-1.1-.34-1.12-1.1.23-1.6L20.1 2.56c.92-.34 1.73.22 1.3.62Z"/>
+
+        <path
+            d="M21.4 3.18 18.15 20c-.25 1.19-.91 1.49-1.84.93l-5.1-3.76-2.46 2.37c-.27.27-.5.5-1.02.5l.36-5.2 9.47-8.55c.41-.36-.09-.56-.64-.2L5.22 13.32.18 11.74c-1.1-.34-1.12-1.1.23-1.6L20.1 2.56c.92-.34 1.73.22 1.3.62Z"
+        />
+
     </svg>
+
 
 </a>
 
 
-<div class="toast" id="toast"></div>
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
 
 
 <script>
 
-/*
-====================================================
-POSTER URLS
-====================================================
-
-Yahan Vercel se aane wale values set honge.
-
-Agar tumhare Vercel project mein /api/config already hai,
-to ye automatically usse read karega.
-
-====================================================
-*/
+/* =====================================================
+   POSTER CONFIG
+===================================================== */
 
 let HOME_PAGE_MOVE_POST_1 = "";
 let HOME_PAGE_MOVE_POST_2 = "";
 
 let currentSlide = 0;
+
 let sliderTimer;
 
 
-/* GET VERCEL VARIABLES */
+/* =====================================================
+   GET VERCEL VARIABLES
+===================================================== */
 
 async function getPosterVariables(){
 
     try{
 
         const response =
-            await fetch("/api/config",{
-                cache:"no-store"
-            });
+            await fetch(
+                "/api/config",
+                {
+                    cache:"no-store"
+                }
+            );
+
 
         if(response.ok){
 
             const data =
                 await response.json();
 
+
             HOME_PAGE_MOVE_POST_1 =
                 data.HOME_PAGE_MOVE_POST_1 || "";
+
 
             HOME_PAGE_MOVE_POST_2 =
                 data.HOME_PAGE_MOVE_POST_2 || "";
@@ -676,12 +1112,12 @@ async function getPosterVariables(){
 
 
     /*
-       EXACTLY 4 SLIDES
+        EXACTLY:
 
-       POST 1
-       POST 2
-       POST 1
-       POST 2
+        POST 1
+        POST 2
+        POST 1
+        POST 2
     */
 
     const posters = [
@@ -702,25 +1138,38 @@ async function getPosterVariables(){
 }
 
 
-/* CREATE SLIDES */
+/* =====================================================
+   CREATE SLIDES
+===================================================== */
 
 function createSlides(posters){
 
     const container =
-        document.getElementById("slides");
+        document.getElementById(
+            "slides"
+        );
+
 
     const dots =
-        document.getElementById("dots");
+        document.getElementById(
+            "dots"
+        );
+
 
     container.innerHTML = "";
+
     dots.innerHTML = "";
 
 
     posters.forEach(
         (url,index)=>{
 
+
             const slide =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             slide.className =
                 "slide" +
@@ -732,21 +1181,34 @@ function createSlides(posters){
 
 
             const image =
-                document.createElement("img");
+                document.createElement(
+                    "img"
+                );
 
-            image.src = url;
+
+            image.src =
+                url;
+
 
             image.alt =
                 "TOP PAY";
 
 
-            slide.appendChild(image);
+            slide.appendChild(
+                image
+            );
 
-            container.appendChild(slide);
+
+            container.appendChild(
+                slide
+            );
 
 
             const dot =
-                document.createElement("span");
+                document.createElement(
+                    "span"
+                );
+
 
             dot.className =
                 "dot" +
@@ -757,7 +1219,10 @@ function createSlides(posters){
                 );
 
 
-            dots.appendChild(dot);
+            dots.appendChild(
+                dot
+            );
+
 
         }
     );
@@ -765,16 +1230,21 @@ function createSlides(posters){
 
     currentSlide = 0;
 
+
     startSlider();
 
 }
 
 
-/* SLIDER */
+/* =====================================================
+   SLIDER
+===================================================== */
 
 function startSlider(){
 
-    clearInterval(sliderTimer);
+    clearInterval(
+        sliderTimer
+    );
 
 
     if(
@@ -810,6 +1280,7 @@ function showSlide(index){
             ".slide"
         );
 
+
     const dots =
         document.querySelectorAll(
             ".dot"
@@ -824,8 +1295,12 @@ function showSlide(index){
 
 
     currentSlide =
-        (index + slides.length)
-        % slides.length;
+        (
+            index +
+            slides.length
+        )
+        %
+        slides.length;
 
 
     slides.forEach(
@@ -854,23 +1329,31 @@ function showSlide(index){
 }
 
 
-/* FORM VALIDATION */
+/* =====================================================
+   FORM ELEMENTS
+===================================================== */
 
 const mobile =
     document.getElementById(
         "mobile"
     );
 
+
 const password =
     document.getElementById(
         "password"
     );
+
 
 const continueBtn =
     document.getElementById(
         "continueBtn"
     );
 
+
+/* =====================================================
+   FORM VALIDATION
+===================================================== */
 
 function validate(){
 
@@ -914,13 +1397,16 @@ mobile.addEventListener(
     validate
 );
 
+
 password.addEventListener(
     "input",
     validate
 );
 
 
-/* TOAST */
+/* =====================================================
+   TOAST
+===================================================== */
 
 function showToast(message){
 
@@ -959,81 +1445,110 @@ function showToast(message){
 }
 
 
-/* BUTTONS */
+/* =====================================================
+   LOGIN
+===================================================== */
 
 document
-.getElementById("loginForm")
-.addEventListener(
-    "submit",
-    function(event){
+    .getElementById(
+        "loginForm"
+    )
+    .addEventListener(
+        "submit",
+        function(event){
 
-        event.preventDefault();
+            event.preventDefault();
 
-        if(
-            continueBtn.disabled
-        ){
 
-            return;
+            if(
+                continueBtn.disabled
+            ){
+
+                return;
+
+            }
+
+
+            showToast(
+                "Account details accepted."
+            );
 
         }
+    );
 
-        showToast(
-            "Account details accepted."
-        );
 
-    }
-);
-
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
 
 document
-.getElementById("forgot")
-.addEventListener(
-    "click",
-    ()=>{
+    .getElementById(
+        "forgot"
+    )
+    .addEventListener(
+        "click",
+        ()=>{
 
-        showToast(
-            "Forget Password"
-        );
+            showToast(
+                "Forget Password"
+            );
 
-    }
-);
+        }
+    );
 
 
-document
-.getElementById("registerBtn")
-.addEventListener(
-    "click",
-    ()=>{
-
-        showToast(
-            "Register New Account"
-        );
-
-    }
-);
-
+/* =====================================================
+   REGISTER
+===================================================== */
 
 document
-.getElementById("telegram")
-.addEventListener(
-    "click",
-    function(event){
+    .getElementById(
+        "registerBtn"
+    )
+    .addEventListener(
+        "click",
+        ()=>{
 
-        event.preventDefault();
+            showToast(
+                "Register New Account"
+            );
 
-        showToast(
-            "Telegram"
-        );
-
-    }
-);
+        }
+    );
 
 
-/* START */
+/* =====================================================
+   TELEGRAM
+===================================================== */
+
+document
+    .getElementById(
+        "telegram"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            event.preventDefault();
+
+
+            showToast(
+                "Telegram"
+            );
+
+        }
+    );
+
+
+/* =====================================================
+   START
+===================================================== */
 
 getPosterVariables();
 
 </script>
 
+
 </body>
+
 </html>
