@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>TOP PAY • Success</title>
+
+<link
+    rel="icon"
+    type="image/webp"
+    href="https://i.ibb.co/fVqwvyvF/aa.webp"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="https://i.ibb.co/fVqwvyvF/aa.webp"
+>
+
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*{
+    box-sizing:border-box;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#f5f7fc;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    color:#111;
+
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   TOP BLUE HEADER
+===================================================== */
+
+.top-header{
+    width:100%;
+
+    height:345px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0878ff 0%,
+            #075fe7 45%,
+            #164fc8 100%
+        );
+
+    border-radius:
+        0 0 115px 115px;
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding-top:52px;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo-circle{
+    width:148px;
+    height:148px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 2px 12px rgba(0,0,0,.05);
+}
+
+.logo-circle img{
+    width:116px;
+    height:116px;
+
+    object-fit:contain;
+
+    display:block;
+}
+
+
+/* =====================================================
+   TOP PAY TITLE
+===================================================== */
+
+.brand-name{
+    margin-top:4px;
+
+    color:#fff;
+
+    font-size:48px;
+
+    line-height:55px;
+
+    font-weight:700;
+
+    letter-spacing:-1.2px;
+
+    text-align:center;
+}
+
+
+/* =====================================================
+   SUCCESS CARD
+===================================================== */
+
+.success-card{
+    position:absolute;
+
+    top:306px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:calc(100% - 44px);
+
+    max-width:808px;
+
+    min-height:540px;
+
+    background:#fff;
+
+    border-radius:38px;
+
+    padding:
+        68px 35px 50px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    box-shadow:
+        0 12px 35px rgba(35,65,120,.08);
+}
+
+
+/* =====================================================
+   SUCCESS ICON
+===================================================== */
+
+.success-icon{
+    width:138px;
+    height:138px;
+
+    border-radius:50%;
+
+    background:#05c85a;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:30px;
+}
+
+
+/*
+   CSS checkmark
+*/
+
+.success-icon::before{
+    content:"";
+
+    width:48px;
+    height:78px;
+
+    border-right:9px solid #34475a;
+    border-bottom:9px solid #34475a;
+
+    transform:
+        rotate(42deg)
+        translate(-5px,-5px);
+
+    border-radius:3px;
+}
+
+
+/* =====================================================
+   SUCCESS TITLE
+===================================================== */
+
+.success-title{
+    margin:0;
+
+    color:#1e314b;
+
+    font-size:39px;
+
+    line-height:48px;
+
+    font-weight:700;
+
+    letter-spacing:-.7px;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.success-description{
+    margin:
+        20px 0 0;
+
+    max-width:690px;
+
+    color:#66758b;
+
+    font-size:29px;
+
+    line-height:40px;
+
+    font-weight:400;
+}
+
+
+/* =====================================================
+   REDIRECT
+===================================================== */
+
+.redirect-text{
+    margin-top:43px;
+
+    color:#2870d1;
+
+    font-size:29px;
+
+    line-height:38px;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:600px){
+
+    .top-header{
+        height:345px;
+
+        border-radius:
+            0 0 105px 105px;
+
+        padding-top:52px;
+    }
+
+
+    .logo-circle{
+        width:148px;
+        height:148px;
+    }
+
+    .logo-circle img{
+        width:116px;
+        height:116px;
+    }
+
+
+    .brand-name{
+        font-size:48px;
+
+        line-height:55px;
+    }
+
+
+    .success-card{
+        top:306px;
+
+        width:calc(100% - 44px);
+
+        min-height:540px;
+
+        border-radius:38px;
+
+        padding:
+            68px 28px 45px;
+    }
+
+
+    .success-icon{
+        width:138px;
+        height:138px;
+
+        margin-bottom:30px;
+    }
+
+
+    .success-title{
+        font-size:39px;
+
+        line-height:48px;
+    }
+
+
+    .success-description{
+        font-size:29px;
+
+        line-height:40px;
+    }
+
+
+    .redirect-text{
+        font-size:29px;
+
+        line-height:38px;
+
+        margin-top:43px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width:430px){
+
+    .top-header{
+        height:345px;
+
+        padding-top:52px;
+
+        border-radius:
+            0 0 105px 105px;
+    }
+
+
+    .logo-circle{
+        width:148px;
+        height:148px;
+    }
+
+    .logo-circle img{
+        width:116px;
+        height:116px;
+    }
+
+
+    .brand-name{
+        font-size:45px;
+
+        line-height:52px;
+    }
+
+
+    .success-card{
+        top:306px;
+
+        width:calc(100% - 44px);
+
+        min-height:540px;
+
+        border-radius:38px;
+
+        padding:
+            68px 18px 45px;
+    }
+
+
+    .success-icon{
+        width:138px;
+        height:138px;
+
+        margin-bottom:30px;
+    }
+
+
+    .success-title{
+        font-size:30px;
+
+        line-height:38px;
+
+        white-space:nowrap;
+    }
+
+
+    .success-description{
+        margin-top:20px;
+
+        font-size:22px;
+
+        line-height:31px;
+
+        max-width:350px;
+    }
+
+
+    .redirect-text{
+        margin-top:43px;
+
+        font-size:22px;
+
+        line-height:30px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL SCREEN
+===================================================== */
+
+@media (max-width:350px){
+
+    .success-title{
+        font-size:27px;
+
+        line-height:35px;
+    }
+
+
+    .success-description{
+        font-size:20px;
+
+        line-height:29px;
+    }
+
+
+    .redirect-text{
+        font-size:20px;
+
+        line-height:28px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BLUE HEADER
+===================================================== -->
+
+<header class="top-header">
+
+
+    <div class="logo-circle">
+
+        <img
+            src="https://i.ibb.co/fVqwvyvF/aa.webp"
+            alt="TOP PAY"
+        >
+
+    </div>
+
+
+    <div class="brand-name">
+        TOP PAY
+    </div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     SUCCESS CARD
+===================================================== -->
+
+<main class="success-card">
+
+
+    <!-- SUCCESS CHECK -->
+
+    <div class="success-icon"></div>
+
+
+    <!-- TITLE -->
+
+    <h1 class="success-title">
+        Wallet Successfully Updated
+    </h1>
+
+
+    <!-- DESCRIPTION -->
+
+    <p class="success-description">
+        Your transaction has been processed securely
+        <br>
+        with TOP PAY.
+    </p>
+
+
+    <!-- REDIRECT -->
+
+    <div
+        class="redirect-text"
+        id="redirectText">
+
+        Redirecting in 4 seconds...
+
+    </div>
+
+
+</main>
+
+
+
+<script>
+
+/* =====================================================
+   REDIRECT SETTINGS
+===================================================== */
+
+/*
+   Yahan apna destination URL set kar sakte ho.
+
+   Example:
+
+   const REDIRECT_URL =
+       "https://toppay.net.in/";
+
+*/
+
+const REDIRECT_URL = "https://toppay.net.in/";
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+let seconds = 4;
+
+const redirectText =
+    document.getElementById(
+        "redirectText"
+    );
+
+
+const countdown =
+    setInterval(
+        function(){
+
+            seconds--;
+
+
+            if(seconds > 0){
+
+                redirectText.textContent =
+                    "Redirecting in " +
+                    seconds +
+                    " seconds...";
+
+            }
+
+
+            if(seconds <= 0){
+
+                clearInterval(
+                    countdown
+                );
+
+
+                redirectText.textContent =
+                    "Redirecting...";
+
+
+                /*
+                 * Redirect
+                 */
+
+                window.location.href =
+                    REDIRECT_URL;
+
+            }
+
+        },
+        1000
+    );
+
+</script>
+
+
+</body>
+</html>
