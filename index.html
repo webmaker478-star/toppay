@@ -210,7 +210,7 @@ button{
 
 
 /* =====================================================
-   POSTER
+   POSTER VIEWPAGER
 ===================================================== */
 
 .poster{
@@ -227,16 +227,53 @@ button{
     background:#111;
 }
 
-.slide{
+
+/*
+   Track holds every poster horizontally.
+   This creates a real ViewPager-style movement.
+*/
+
+.slides-track{
     position:absolute;
 
-    inset:0;
+    top:0;
+    left:0;
 
-    display:none;
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    transition:
+        transform .6s
+        cubic-bezier(
+            .25,
+            .8,
+            .25,
+            1
+        );
+
+    will-change:transform;
 }
 
-.slide.active{
-    display:block;
+
+/*
+   Every slide is exactly the
+   width of the poster.
+*/
+
+.slide{
+    position:relative;
+
+    flex:
+        0
+        0
+        100%;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
 }
 
 .slide img{
@@ -246,6 +283,10 @@ button{
     object-fit:cover;
 
     display:block;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
 }
 
 
@@ -268,6 +309,8 @@ button{
     align-items:center;
 
     gap:5px;
+
+    z-index:5;
 }
 
 .dot{
@@ -279,6 +322,9 @@ button{
     background:#fff;
 
     opacity:.9;
+
+    transition:
+        width .25s ease;
 }
 
 .dot.active{
@@ -433,15 +479,21 @@ button{
 
     color:#111;
 
-    font-size:12px;
+    /*
+       Increased input text size
+    */
+
+    font-size:15px;
 
     font-weight:400;
 }
 
 .input-box input::placeholder{
-    color:#b8b8b8;
+    color:#8f8f8f;
 
     opacity:1;
+
+    font-size:15px;
 }
 
 
@@ -726,6 +778,7 @@ button{
 
     .card-title{
         font-size:26px;
+
         line-height:31px;
     }
 
@@ -735,6 +788,14 @@ button{
 
     .input-box{
         height:47px;
+    }
+
+    .input-box input{
+        font-size:15px;
+    }
+
+    .input-box input::placeholder{
+        font-size:15px;
     }
 
     .continue{
@@ -760,7 +821,16 @@ button{
 
     .card-title{
         font-size:23px;
+
         line-height:28px;
+    }
+
+    .input-box input{
+        font-size:14px;
+    }
+
+    .input-box input::placeholder{
+        font-size:14px;
     }
 
 }
@@ -835,17 +905,23 @@ button{
 
 
     <!-- =================================================
-         POSTER
+         POSTER / VIEWPAGER
     ================================================= -->
 
     <div class="poster">
 
-        <div id="slides"></div>
+
+        <div
+            class="slides-track"
+            id="slidesTrack"
+        ></div>
+
 
         <div
             class="dots"
             id="dots"
         ></div>
+
 
     </div>
 
@@ -1067,7 +1143,7 @@ button{
 <script>
 
 /* =====================================================
-   DIRECT POSTER URLs
+   DIRECT POSTER URLS
 ===================================================== */
 
 const POSTER_1 =
@@ -1078,12 +1154,12 @@ const POSTER_2 =
 
 
 /*
-    4 SLIDES:
+    VIEWPAGER ORDER
 
-    1. IMG-1764
-    2. IMG-1763
-    3. IMG-1764
-    4. IMG-1763
+    1 → IMG-1764
+    2 → IMG-1763
+    3 → IMG-1764
+    4 → IMG-1763
 */
 
 const posters = [
@@ -1102,14 +1178,14 @@ let sliderTimer;
 
 
 /* =====================================================
-   CREATE SLIDES
+   CREATE VIEWPAGER SLIDES
 ===================================================== */
 
 function createSlides(){
 
-    const container =
+    const track =
         document.getElementById(
-            "slides"
+            "slidesTrack"
         );
 
 
@@ -1119,7 +1195,7 @@ function createSlides(){
         );
 
 
-    container.innerHTML = "";
+    track.innerHTML = "";
 
     dots.innerHTML = "";
 
@@ -1135,12 +1211,7 @@ function createSlides(){
 
 
             slide.className =
-                "slide" +
-                (
-                    index === 0
-                    ? " active"
-                    : ""
-                );
+                "slide";
 
 
             const image =
@@ -1157,10 +1228,6 @@ function createSlides(){
                 "TOP PAY";
 
 
-            /*
-                Prevent broken image layout
-            */
-
             image.loading =
                 index === 0
                 ? "eager"
@@ -1172,7 +1239,7 @@ function createSlides(){
             );
 
 
-            container.appendChild(
+            track.appendChild(
                 slide
             );
 
@@ -1204,13 +1271,59 @@ function createSlides(){
     currentSlide = 0;
 
 
+    updateSlider();
+
     startSlider();
 
 }
 
 
 /* =====================================================
-   SLIDER
+   UPDATE VIEWPAGER
+===================================================== */
+
+function updateSlider(){
+
+    const track =
+        document.getElementById(
+            "slidesTrack"
+        );
+
+
+    const dots =
+        document.querySelectorAll(
+            ".dot"
+        );
+
+
+    /*
+       Move exactly one full poster width
+    */
+
+    track.style.transform =
+        "translate3d(-" +
+        (
+            currentSlide * 100
+        ) +
+        "%,0,0)";
+
+
+    dots.forEach(
+        (dot,index)=>{
+
+            dot.classList.toggle(
+                "active",
+                index === currentSlide
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   AUTO SLIDER
 ===================================================== */
 
 function startSlider(){
@@ -1221,9 +1334,7 @@ function startSlider(){
 
 
     if(
-        document.querySelectorAll(
-            ".slide"
-        ).length <= 1
+        posters.length <= 1
     ){
 
         return;
@@ -1231,73 +1342,32 @@ function startSlider(){
     }
 
 
+    /*
+       NEXT POSTER EVERY 3 SECONDS
+    */
+
     sliderTimer =
         setInterval(
             ()=>{
 
-                showSlide(
-                    currentSlide + 1
-                );
+                currentSlide++;
+
+
+                if(
+                    currentSlide >=
+                    posters.length
+                ){
+
+                    currentSlide = 0;
+
+                }
+
+
+                updateSlider();
 
             },
-            4500
+            3000
         );
-
-}
-
-
-function showSlide(index){
-
-    const slides =
-        document.querySelectorAll(
-            ".slide"
-        );
-
-
-    const dots =
-        document.querySelectorAll(
-            ".dot"
-        );
-
-
-    if(!slides.length){
-
-        return;
-
-    }
-
-
-    currentSlide =
-        (
-            index +
-            slides.length
-        )
-        %
-        slides.length;
-
-
-    slides.forEach(
-        (slide,i)=>{
-
-            slide.classList.toggle(
-                "active",
-                i === currentSlide
-            );
-
-        }
-    );
-
-
-    dots.forEach(
-        (dot,i)=>{
-
-            dot.classList.toggle(
-                "active",
-                i === currentSlide
-            );
-
-        }
-    );
 
 }
 
