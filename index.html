@@ -15,7 +15,8 @@
     -webkit-tap-highlight-color:transparent;
 }
 
-html,body{
+html,
+body{
     margin:0;
     padding:0;
     min-height:100%;
@@ -41,7 +42,7 @@ body{
     padding:8px 16px 15px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .header{
     width:100%;
@@ -73,17 +74,23 @@ body{
     font-weight:400;
 }
 
-/* STEPS */
+/* ================= STEPS ================= */
 
 .steps{
     width:48%;
-    margin:13px auto 39px;
+
+    /*
+     * No gap before poster
+     */
+    margin:13px auto 0;
+
     display:flex;
     align-items:flex-start;
 }
 
 .step{
     min-width:31px;
+
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -99,6 +106,7 @@ body{
 .circle{
     width:30px;
     height:30px;
+
     border-radius:50%;
 
     display:flex;
@@ -123,8 +131,10 @@ body{
 
 .step-name{
     margin-top:4px;
+
     font-size:12.5px;
     line-height:14px;
+
     white-space:nowrap;
     font-weight:400;
 }
@@ -139,30 +149,38 @@ body{
 
 .step-line{
     flex:1;
+
     height:2.5px;
+
     border-radius:5px;
+
     background:#2c68d0;
+
     margin:12px 3px 0;
 }
 
-/* POSTER */
+/* ================= POSTER ================= */
 
 .poster{
     width:100%;
     height:158px;
+
     position:relative;
 
-    /* NO TOP / BOTTOM GAP */
-    margin-top:0;
-    margin-bottom:0;
+    /*
+     * Absolutely zero external gap
+     */
+    margin:0;
 
     overflow:hidden;
+
     border-radius:17px;
     background:#111;
 }
 
 .slides-track{
     position:absolute;
+
     top:0;
     left:0;
 
@@ -192,16 +210,18 @@ body{
     height:100%;
 
     object-fit:cover;
+
     display:block;
 
     user-select:none;
     -webkit-user-drag:none;
 }
 
-/* DOTS */
+/* ================= DOTS ================= */
 
 .dots{
     position:absolute;
+
     left:0;
     right:0;
     bottom:8px;
@@ -209,6 +229,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+
     gap:5px;
 
     z-index:5;
@@ -217,7 +238,9 @@ body{
 .dot{
     width:5px;
     height:5px;
+
     border-radius:10px;
+
     background:rgba(255,255,255,.55);
 
     transition:
@@ -230,14 +253,17 @@ body{
     background:#fff;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .card{
     background:#fff;
 
     border-radius:0 0 17px 17px;
 
-    padding:28px 21px 22px;
+    /*
+     * Zero gap between poster and title
+     */
+    padding:0 21px 22px;
 }
 
 .card-title{
@@ -245,11 +271,16 @@ body{
 
     text-align:center;
 
-    font-size:30px;
-    line-height:35px;
+    /*
+     * Reduced from 30px
+     */
+    font-size:25px;
+    line-height:31px;
+
     font-weight:700;
 
-    letter-spacing:-.4px;
+    letter-spacing:-.3px;
+
     white-space:nowrap;
 }
 
@@ -262,10 +293,11 @@ body{
 
     font-size:12px;
     line-height:15px;
+
     font-weight:400;
 }
 
-/* INPUTS */
+/* ================= INPUTS ================= */
 
 .input-box{
     width:100%;
@@ -296,6 +328,7 @@ body{
 .input-icon svg{
     width:18px;
     height:18px;
+
     fill:#080808;
 }
 
@@ -305,6 +338,7 @@ body{
 
     border:0;
     outline:0;
+
     background:transparent;
 
     padding:0 8px 0 0;
@@ -317,12 +351,13 @@ body{
 
 .input-box input::placeholder{
     color:#8f8f8f;
+
     opacity:1;
 
     font-size:15px;
 }
 
-/* FORGOT */
+/* ================= FORGOT ================= */
 
 .forgot{
     margin-top:10px;
@@ -332,16 +367,18 @@ body{
 .forgot button{
     background:none;
     border:0;
+
     padding:0;
 
     color:#2d66c5;
 
     font-size:14px;
     line-height:17px;
+
     font-weight:400;
 }
 
-/* CONTINUE */
+/* ================= CONTINUE ================= */
 
 .continue{
     width:100%;
@@ -353,6 +390,7 @@ body{
     border-radius:14px;
 
     background:#bec9f3;
+
     color:#fff;
 
     font-size:15px;
@@ -380,7 +418,7 @@ body{
     font-weight:300;
 }
 
-/* REGISTER */
+/* ================= REGISTER ================= */
 
 .register{
     width:100%;
@@ -392,6 +430,7 @@ body{
     border-radius:14px;
 
     background:#20c55a;
+
     color:#fff;
 
     font-size:15px;
@@ -400,7 +439,7 @@ body{
     cursor:pointer;
 }
 
-/* SECURITY */
+/* ================= SECURITY ================= */
 
 .security{
     margin-top:17px;
@@ -418,7 +457,7 @@ body{
     font-weight:500;
 }
 
-/* TELEGRAM */
+/* ================= TELEGRAM ================= */
 
 .telegram{
     position:fixed;
@@ -446,10 +485,11 @@ body{
 .telegram svg{
     width:23px;
     height:23px;
+
     fill:#fff;
 }
 
-/* TOAST */
+/* ================= TOAST ================= */
 
 .toast{
     position:fixed;
@@ -491,21 +531,25 @@ body{
         translateY(0);
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media (max-width:380px){
 
     .steps{
         width:52%;
+        margin-bottom:0;
     }
 
     .poster{
         height:auto;
         aspect-ratio:655 / 261;
 
-        /* NO GAP */
         margin-top:0;
         margin-bottom:0;
+    }
+
+    .card{
+        padding-top:0;
     }
 }
 
@@ -516,7 +560,8 @@ body{
     }
 
     .card-title{
-        font-size:27px;
+        font-size:23px;
+        line-height:29px;
     }
 }
 </style>
@@ -525,6 +570,8 @@ body{
 <body>
 
 <div class="page">
+
+    <!-- HEADER -->
 
     <div class="header">
 
@@ -611,14 +658,13 @@ body{
         </p>
 
 
-        <!-- MOBILE -->
+        <!-- MOBILE NUMBER -->
 
         <div class="input-box">
 
             <div class="input-icon">
 
-                <svg
-                    viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24">
 
                     <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/>
 
@@ -646,8 +692,7 @@ body{
 
             <div class="input-icon">
 
-                <svg
-                    viewBox="0 0 24 24">
+                <svg viewBox="0 0 24 24">
 
                     <path d="M17 8h-1V6a4 4 0 00-8 0v2H7a2 2 0 00-2 2v8a2 2 0 002 2h10a2 2 0 002-2v-8a2 2 0 00-2-2zm-7-2a2 2 0 014 0v2h-4V6zm5 9h-2v2h-2v-2H9v-2h2v-2h2v2h2v2z"/>
 
@@ -672,7 +717,9 @@ body{
             <button
                 type="button"
                 id="forgotBtn">
+
                 Forgot Password?
+
             </button>
 
         </div>
@@ -714,6 +761,7 @@ body{
         <div class="security">
 
             🔒 Your information is securely encrypted.
+
             <br>
 
             <strong>
@@ -733,8 +781,7 @@ body{
     class="telegram"
     id="telegramBtn">
 
-    <svg
-        viewBox="0 0 24 24">
+    <svg viewBox="0 0 24 24">
 
         <path d="M21.4 3.6L18.2 20c-.24 1.16-.87 1.45-1.76.9l-4.85-3.58-2.34 2.25c-.26.26-.48.48-.98.48l.35-4.94 8.99-8.12c.39-.35-.08-.55-.6-.2L6.9 13.95 2.15 12.47c-1.03-.32-1.05-1.03.21-1.52L20.9 3.72c.86-.32 1.61.2 1.5-.12z"/>
 
@@ -753,14 +800,13 @@ body{
 
 <script>
 
-/* POSTERS */
+/* ================= POSTERS ================= */
 
 const POSTER_1 =
     "https://i.ibb.co/hRMF9Dwp/IMG-1764.jpg";
 
 const POSTER_2 =
     "https://i.ibb.co/hJPmhB2X/IMG-1763.jpg";
-
 
 const posters = [
     POSTER_1,
@@ -769,12 +815,11 @@ const posters = [
     POSTER_2
 ];
 
-
 let currentSlide = 0;
 let sliderTimer;
 
 
-/* ELEMENTS */
+/* ================= ELEMENTS ================= */
 
 const track =
     document.getElementById("slidesTrack");
@@ -783,7 +828,7 @@ const dots =
     document.getElementById("dots");
 
 
-/* CREATE SLIDES */
+/* ================= CREATE SLIDES ================= */
 
 function createSlides(){
 
@@ -806,7 +851,6 @@ function createSlides(){
             img.alt = "TOP PAY";
 
             slide.appendChild(img);
-
             track.appendChild(slide);
 
 
@@ -817,14 +861,19 @@ function createSlides(){
                 "dot" +
                 (index === 0 ? " active" : "");
 
+
             dot.addEventListener(
                 "click",
                 ()=>{
+
                     currentSlide = index;
+
                     updateSlider();
                     restartSlider();
+
                 }
             );
+
 
             dots.appendChild(dot);
 
@@ -834,7 +883,7 @@ function createSlides(){
 }
 
 
-/* UPDATE SLIDER */
+/* ================= UPDATE SLIDER ================= */
 
 function updateSlider(){
 
@@ -860,7 +909,7 @@ function updateSlider(){
 }
 
 
-/* AUTO SLIDER */
+/* ================= AUTO SLIDER ================= */
 
 function startSlider(){
 
@@ -894,7 +943,7 @@ function restartSlider(){
 }
 
 
-/* FORM */
+/* ================= FORM ================= */
 
 const mobile =
     document.getElementById("mobile");
@@ -943,7 +992,7 @@ password.addEventListener(
 );
 
 
-/* TOAST */
+/* ================= TOAST ================= */
 
 const toast =
     document.getElementById("toast");
@@ -966,7 +1015,7 @@ function showToast(message){
 }
 
 
-/* CONTINUE */
+/* ================= CONTINUE ================= */
 
 continueBtn.addEventListener(
     "click",
@@ -986,49 +1035,55 @@ continueBtn.addEventListener(
 );
 
 
-/* FORGOT */
+/* ================= FORGOT ================= */
 
 document
     .getElementById("forgotBtn")
     .addEventListener(
         "click",
         ()=>{
+
             showToast(
                 "Forgot password option selected."
             );
+
         }
     );
 
 
-/* REGISTER */
+/* ================= REGISTER ================= */
 
 document
     .getElementById("registerBtn")
     .addEventListener(
         "click",
         ()=>{
+
             showToast(
                 "Registration option selected."
             );
+
         }
     );
 
 
-/* TELEGRAM */
+/* ================= TELEGRAM ================= */
 
 document
     .getElementById("telegramBtn")
     .addEventListener(
         "click",
         ()=>{
+
             showToast(
                 "Telegram support selected."
             );
+
         }
     );
 
 
-/* INIT */
+/* ================= INIT ================= */
 
 createSlides();
 updateSlider();
