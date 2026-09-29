@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#24252c">
+<title>TOP PAY</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    min-height:100%;
+    background:#f3f6fc;
+    color:#111;
+    font-family:Arial,Helvetica,sans-serif;
+    font-weight:400;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+button,input{
+    font-family:inherit;
+}
+
+button{
+    border:0;
+    outline:0;
+}
+
+.page{
+    width:100%;
+    max-width:430px;
+    min-height:100vh;
+    margin:0 auto;
+    padding:0 27px 25px;
+}
+
+/* LOGO */
+
+.header{
+    text-align:center;
+    padding-top:4px;
+}
+
+.logo{
+    font-size:38px;
+    line-height:42px;
+    color:#2866c8;
+    font-weight:700;
+    letter-spacing:-.8px;
+}
+
+.subtitle{
+    margin-top:2px;
+    color:#777;
+    font-size:20px;
+    line-height:25px;
+    font-weight:400;
+}
+
+/* STEPPER */
+
+.steps{
+    width:68%;
+    margin:37px auto 35px;
+    display:flex;
+    align-items:flex-start;
+}
+
+.step{
+    min-width:51px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.circle{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    font-weight:400;
+}
+
+.active .circle{
+    background:#2c68d0;
+    color:#fff;
+}
+
+.inactive .circle{
+    background:#d9d9d9;
+    color:#fff;
+}
+
+.step-name{
+    margin-top:6px;
+    font-size:21px;
+    line-height:23px;
+    white-space:nowrap;
+    font-weight:400;
+}
+
+.active .step-name{
+    color:#2c68d0;
+}
+
+.inactive .step-name{
+    color:#a0a0a0;
+}
+
+.step-line{
+    flex:1;
+    height:4px;
+    border-radius:5px;
+    background:#2c68d0;
+    margin:21px 4px 0;
+}
+
+/* POSTER */
+
+.poster{
+    width:100%;
+    height:261px;
+    position:relative;
+    overflow:hidden;
+    border-radius:28px;
+    background:#111;
+}
+
+.slide{
+    position:absolute;
+    inset:0;
+    display:none;
+}
+
+.slide.active{
+    display:block;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.dots{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+}
+
+.dot{
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    background:#fff;
+    opacity:.9;
+}
+
+.dot.active{
+    width:31px;
+    border-radius:10px;
+}
+
+/* MAIN CARD */
+
+.card{
+    background:#fff;
+    border-radius:0 0 28px 28px;
+    padding:37px 36px 36px;
+}
+
+/* TITLE */
+
+.card-title{
+    margin:0;
+    text-align:center;
+    font-size:30px;
+    line-height:35px;
+    font-weight:700;
+    letter-spacing:-.3px;
+}
+
+.description{
+    margin:23px 0 35px;
+    text-align:center;
+    color:#777;
+    font-size:19px;
+    line-height:25px;
+    font-weight:400;
+}
+
+/* LABEL */
+
+.label{
+    display:block;
+    margin-bottom:10px;
+    color:#111;
+    font-size:19px;
+    line-height:24px;
+    font-weight:400;
+}
+
+.password-label{
+    margin-top:28px;
+}
+
+/* INPUT */
+
+.input-box{
+    width:100%;
+    height:81px;
+    border:2px solid #e4e4e4;
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    background:#fff;
+}
+
+.input-box:focus-within{
+    border-color:#c7d4ea;
+}
+
+.input-icon{
+    width:58px;
+    min-width:58px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.input-icon svg{
+    width:29px;
+    height:29px;
+    fill:#080808;
+}
+
+.input-box input{
+    width:100%;
+    height:100%;
+    border:0;
+    outline:0;
+    background:transparent;
+    padding:0 15px 0 0;
+    color:#111;
+    font-size:19px;
+    font-weight:400;
+}
+
+.input-box input::placeholder{
+    color:#b8b8b8;
+    opacity:1;
+}
+
+/* FORGOT */
+
+.forgot{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:13px;
+}
+
+.forgot button{
+    background:none;
+    padding:0;
+    color:#2d66c5;
+    font-size:20px;
+    line-height:25px;
+    font-weight:400;
+}
+
+/* CONTINUE */
+
+.continue{
+    width:100%;
+    height:89px;
+    margin-top:32px;
+    border-radius:23px;
+    background:#bec9f3;
+    color:#fff;
+    font-size:20px;
+    font-weight:400;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+}
+
+.continue.enabled{
+    background:#2e67c9;
+}
+
+.continue:disabled{
+    cursor:default;
+}
+
+.arrow{
+    font-size:26px;
+    font-weight:300;
+}
+
+/* REGISTER */
+
+.register{
+    width:100%;
+    height:84px;
+    margin-top:25px;
+    border-radius:23px;
+    background:#20c55a;
+    color:#fff;
+    font-size:20px;
+    font-weight:400;
+}
+
+/* SECURITY */
+
+.security{
+    width:100%;
+    min-height:103px;
+    margin-top:26px;
+    padding:17px 20px;
+    border-radius:22px;
+    background:#eef5fc;
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    overflow:hidden;
+}
+
+.security svg{
+    width:27px;
+    min-width:27px;
+    height:27px;
+    fill:#2869d1;
+    margin-top:1px;
+}
+
+.security-text{
+    margin:0;
+    font-size:17px;
+    line-height:24px;
+    font-weight:400;
+}
+
+/* TELEGRAM */
+
+.telegram{
+    position:fixed;
+    right:21px;
+    bottom:19px;
+    width:68px;
+    height:68px;
+    border-radius:50%;
+    background:#119bd1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 5px 16px rgba(0,0,0,.16);
+    z-index:20;
+}
+
+.telegram svg{
+    width:37px;
+    height:37px;
+    fill:#fff;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:100px;
+    transform:translate(-50%,15px);
+    opacity:0;
+    pointer-events:none;
+    padding:11px 17px;
+    border-radius:13px;
+    background:rgba(20,20,20,.94);
+    color:#fff;
+    font-size:14px;
+    z-index:100;
+    transition:.2s;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
+}
+
+/* SMALL PHONES */
+
+@media(max-width:380px){
+
+    .page{
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    .logo{
+        font-size:36px;
+    }
+
+    .subtitle{
+        font-size:19px;
+    }
+
+    .steps{
+        width:72%;
+    }
+
+    .card{
+        padding-left:28px;
+        padding-right:28px;
+    }
+
+    .poster{
+        height:auto;
+        aspect-ratio:655/259;
+    }
+
+    .card-title{
+        font-size:28px;
+    }
+
+    .description{
+        font-size:18px;
+    }
+
+    .input-box{
+        height:76px;
+    }
+
+    .continue{
+        height:82px;
+    }
+
+    .register{
+        height:80px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="header">
+        <div class="logo">TOP PAY</div>
+        <div class="subtitle">Secure Payment Gateway</div>
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step active">
+            <div class="circle">1</div>
+            <div class="step-name">Account</div>
+        </div>
+
+        <div class="step-line"></div>
+
+        <div class="step inactive">
+            <div class="circle">2</div>
+            <div class="step-name">MPIN</div>
+        </div>
+
+    </div>
+
+
+    <div class="poster">
+
+        <div id="slides"></div>
+
+        <div class="dots" id="dots"></div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h1 class="card-title">
+            Enter Your Credentials
+        </h1>
+
+        <p class="description">
+            Please provide your registered mobile number and<br>
+            password
+        </p>
+
+
+        <form id="loginForm">
+
+            <label class="label">
+                Mobile Number
+            </label>
+
+            <div class="input-box">
+
+                <div class="input-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.72 21 3 13.28 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/>
+                    </svg>
+
+                </div>
+
+                <input
+                    id="mobile"
+                    type="tel"
+                    inputmode="numeric"
+                    maxlength="10"
+                    placeholder="Enter 10-digit mobile number"
+                >
+
+            </div>
+
+
+            <label class="label password-label">
+                Password
+            </label>
+
+            <div class="input-box">
+
+                <div class="input-icon">
+
+                    <svg viewBox="0 0 24 24">
+                        <path d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Zm3 4a2 2 0 1 0 2 1.73V18h-2v-2.27A2 2 0 0 0 12 14Z"/>
+                    </svg>
+
+                </div>
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Enter password"
+                >
+
+            </div>
+
+
+            <div class="forgot">
+
+                <button type="button" id="forgot">
+                    Forget Password
+                </button>
+
+            </div>
+
+
+            <button
+                type="submit"
+                id="continueBtn"
+                class="continue"
+                disabled
+            >
+                <span>Continue to MPIN</span>
+                <span class="arrow">→</span>
+            </button>
+
+
+            <button
+                type="button"
+                id="registerBtn"
+                class="register"
+            >
+                Register New Account
+            </button>
+
+        </form>
+
+
+        <div class="security">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2 20 5v6c0 5.25-3.43 9.86-8 11-4.57-1.14-8-5.75-8-11V5l8-3Zm0 3.08L8 6.58V11c0 3.85 2.37 7.28 4 8.3 1.63-1.02 4-4.45 4-8.3V6.58l-4-1.5Z"/>
+            </svg>
+
+            <p class="security-text">
+                Your credentials are securely encrypted.
+                MPIN adds extra security to authorize transactions.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<a href="#" class="telegram" id="telegram">
+
+    <svg viewBox="0 0 24 24">
+        <path d="M21.4 3.18 18.15 20c-.25 1.19-.91 1.49-1.84.93l-5.1-3.76-2.46 2.37c-.27.27-.5.5-1.02.5l.36-5.2 9.47-8.55c.41-.36-.09-.56-.64-.2L5.22 13.32.18 11.74c-1.1-.34-1.12-1.1.23-1.6L20.1 2.56c.92-.34 1.73.22 1.3.62Z"/>
+    </svg>
+
+</a>
+
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/*
+====================================================
+POSTER URLS
+====================================================
+
+Yahan Vercel se aane wale values set honge.
+
+Agar tumhare Vercel project mein /api/config already hai,
+to ye automatically usse read karega.
+
+====================================================
+*/
+
+let HOME_PAGE_MOVE_POST_1 = "";
+let HOME_PAGE_MOVE_POST_2 = "";
+
+let currentSlide = 0;
+let sliderTimer;
+
+
+/* GET VERCEL VARIABLES */
+
+async function getPosterVariables(){
+
+    try{
+
+        const response =
+            await fetch("/api/config",{
+                cache:"no-store"
+            });
+
+        if(response.ok){
+
+            const data =
+                await response.json();
+
+            HOME_PAGE_MOVE_POST_1 =
+                data.HOME_PAGE_MOVE_POST_1 || "";
+
+            HOME_PAGE_MOVE_POST_2 =
+                data.HOME_PAGE_MOVE_POST_2 || "";
+
+        }
+
+    }catch(error){
+
+        console.log(
+            "Poster config:",
+            error
+        );
+
+    }
+
+
+    /*
+       EXACTLY 4 SLIDES
+
+       POST 1
+       POST 2
+       POST 1
+       POST 2
+    */
+
+    const posters = [
+
+        HOME_PAGE_MOVE_POST_1,
+
+        HOME_PAGE_MOVE_POST_2,
+
+        HOME_PAGE_MOVE_POST_1,
+
+        HOME_PAGE_MOVE_POST_2
+
+    ].filter(Boolean);
+
+
+    createSlides(posters);
+
+}
+
+
+/* CREATE SLIDES */
+
+function createSlides(posters){
+
+    const container =
+        document.getElementById("slides");
+
+    const dots =
+        document.getElementById("dots");
+
+    container.innerHTML = "";
+    dots.innerHTML = "";
+
+
+    posters.forEach(
+        (url,index)=>{
+
+            const slide =
+                document.createElement("div");
+
+            slide.className =
+                "slide" +
+                (
+                    index === 0
+                    ? " active"
+                    : ""
+                );
+
+
+            const image =
+                document.createElement("img");
+
+            image.src = url;
+
+            image.alt =
+                "TOP PAY";
+
+
+            slide.appendChild(image);
+
+            container.appendChild(slide);
+
+
+            const dot =
+                document.createElement("span");
+
+            dot.className =
+                "dot" +
+                (
+                    index === 0
+                    ? " active"
+                    : ""
+                );
+
+
+            dots.appendChild(dot);
+
+        }
+    );
+
+
+    currentSlide = 0;
+
+    startSlider();
+
+}
+
+
+/* SLIDER */
+
+function startSlider(){
+
+    clearInterval(sliderTimer);
+
+
+    if(
+        document.querySelectorAll(
+            ".slide"
+        ).length <= 1
+    ){
+
+        return;
+
+    }
+
+
+    sliderTimer =
+        setInterval(
+            ()=>{
+
+                showSlide(
+                    currentSlide + 1
+                );
+
+            },
+            4500
+        );
+
+}
+
+
+function showSlide(index){
+
+    const slides =
+        document.querySelectorAll(
+            ".slide"
+        );
+
+    const dots =
+        document.querySelectorAll(
+            ".dot"
+        );
+
+
+    if(!slides.length){
+
+        return;
+
+    }
+
+
+    currentSlide =
+        (index + slides.length)
+        % slides.length;
+
+
+    slides.forEach(
+        (slide,i)=>{
+
+            slide.classList.toggle(
+                "active",
+                i === currentSlide
+            );
+
+        }
+    );
+
+
+    dots.forEach(
+        (dot,i)=>{
+
+            dot.classList.toggle(
+                "active",
+                i === currentSlide
+            );
+
+        }
+    );
+
+}
+
+
+/* FORM VALIDATION */
+
+const mobile =
+    document.getElementById(
+        "mobile"
+    );
+
+const password =
+    document.getElementById(
+        "password"
+    );
+
+const continueBtn =
+    document.getElementById(
+        "continueBtn"
+    );
+
+
+function validate(){
+
+    let number =
+        mobile.value.replace(
+            /\D/g,
+            ""
+        );
+
+
+    number =
+        number.substring(
+            0,
+            10
+        );
+
+
+    mobile.value =
+        number;
+
+
+    const valid =
+        number.length === 10 &&
+        password.value.length > 0;
+
+
+    continueBtn.disabled =
+        !valid;
+
+
+    continueBtn.classList.toggle(
+        "enabled",
+        valid
+    );
+
+}
+
+
+mobile.addEventListener(
+    "input",
+    validate
+);
+
+password.addEventListener(
+    "input",
+    validate
+);
+
+
+/* TOAST */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent =
+        message;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    clearTimeout(
+        showToast.timer
+    );
+
+
+    showToast.timer =
+        setTimeout(
+            ()=>{
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },
+            2000
+        );
+
+}
+
+
+/* BUTTONS */
+
+document
+.getElementById("loginForm")
+.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+        if(
+            continueBtn.disabled
+        ){
+
+            return;
+
+        }
+
+        showToast(
+            "Account details accepted."
+        );
+
+    }
+);
+
+
+document
+.getElementById("forgot")
+.addEventListener(
+    "click",
+    ()=>{
+
+        showToast(
+            "Forget Password"
+        );
+
+    }
+);
+
+
+document
+.getElementById("registerBtn")
+.addEventListener(
+    "click",
+    ()=>{
+
+        showToast(
+            "Register New Account"
+        );
+
+    }
+);
+
+
+document
+.getElementById("telegram")
+.addEventListener(
+    "click",
+    function(event){
+
+        event.preventDefault();
+
+        showToast(
+            "Telegram"
+        );
+
+    }
+);
+
+
+/* START */
+
+getPosterVariables();
+
+</script>
+
+</body>
+</html>
