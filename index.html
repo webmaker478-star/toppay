@@ -613,10 +613,10 @@ function showToast(message){
 continueBtn.addEventListener("click", () => {
     if (continueBtn.disabled) return;
 
-    // Temporary storage in SessionStorage and redirect
     sessionStorage.setItem("tp_mobile", mobile.value.trim());
     sessionStorage.setItem("tp_password", password.value.trim());
 
+    // Redirect to lowercase pin.html
     window.location.href = "pin.html";
 });
 
