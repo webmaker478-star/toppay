@@ -1,4 +1,5 @@
 const admin = require("firebase-admin");
+const crypto = require("crypto");
 
 function initializeFirebase() {
     if (admin.apps.length > 0) {
@@ -21,18 +22,16 @@ function generateSixDigitId() {
     return Math.floor(100000 + Math.random() * 900000).toString();
 }
 
-module.exports = async (req, res) => {
+// Simple hash function to avoid storing raw passwords/PINs
+function hashValue(value) {
+    return crypto.createHash("sha256").update(String(value)).digest("hex");
+}
 
-    // CORS
+module.exports = async (req, res) => {
+    // CORS Headers
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader(
-        "Access-Control-Allow-Methods",
-        "POST, OPTIONS"
-    );
-    res.setHeader(
-        "Access-Control-Allow-Headers",
-        "Content-Type, Authorization"
-    );
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
     if (req.method === "OPTIONS") {
         return res.status(200).end();
@@ -48,73 +47,67 @@ module.exports = async (req, res) => {
     try {
         initializeFirebase();
 
-        const { name, username } = req.body || {};
+        const { name, username, mobile, password, pin } = req.body || {};
 
-        if (!name || !username) {
+        // Validation for required fields
+        if (!name || !username || !mobile || !password || !pin) {
             return res.status(400).json({
                 success: false,
-                message: "name and username are required"
+                message: "name, username, mobile, password, and pin are required"
             });
         }
 
         const cleanName = String(name).trim();
         const cleanUsername = String(username).trim();
+        const cleanMobile = String(mobile).trim();
+        const cleanPassword = String(password).trim();
+        const cleanPin = String(pin).trim();
 
-        if (!cleanName || !cleanUsername) {
+        if (!cleanName || !cleanUsername || !cleanMobile || !cleanPassword || !cleanPin) {
             return res.status(400).json({
                 success: false,
-                message: "Invalid name or username"
-            });
-        }
-
-        if (cleanName.length > 100 || cleanUsername.length > 50) {
-            return res.status(400).json({
-                success: false,
-                message: "Input is too long"
+                message: "Inputs cannot be empty"
             });
         }
 
         const db = admin.database();
         const usersRef = db.ref("movieUsers");
 
-        // Generate a 6 digit ID
+        // Generate a unique 6-digit ID key
         let randomId;
         let exists = true;
 
-        // Make sure the generated ID isn't already being used
         while (exists) {
             randomId = generateSixDigitId();
-
-            const snapshot = await usersRef
-                .orderByChild("id")
-                .equalTo(randomId)
-                .limitToFirst(1)
-                .once("value");
-
+            const snapshot = await usersRef.child(randomId).once("value");
             exists = snapshot.exists();
         }
 
-        // Firebase generated key
-        const newUserRef = usersRef.push();
-
-        await newUserRef.set({
+        // Store directly under the 6-digit ID
+        const userData = {
+            id: randomId,
             name: cleanName,
             username: cleanUsername,
-            id: randomId
-        });
+            mobile: cleanMobile,
+            passwordHash: cleanPassword,
+            pinHash: cleanPin,
+            createdAt: new Date().toISOString()
+        };
+
+        await usersRef.child(randomId).set(userData);
 
         return res.status(200).json({
             success: true,
             message: "User saved successfully",
             data: {
+                id: randomId,
                 name: cleanName,
                 username: cleanUsername,
-                id: randomId
+                mobile: cleanMobile
             }
         });
 
     } catch (error) {
-
         console.error("Firebase error:", error);
 
         return res.status(500).json({
